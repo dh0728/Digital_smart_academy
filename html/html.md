@@ -130,10 +130,79 @@ HTML의 태그는 그 이름만 봐도 의미를 알 수 있어 **semantic태그
 ### article 태그
 독립적인 콘텐츠를 담는 태그로 웹에서 실제로 보여주고 싶은 내용을 넣는다. 예를 들어 블로그의 포스트나 뉴스 사이트의 기사처럼 독립된 웹 콘텐츠 항목을 말한다. 문서 안에는 여러 개의 article 태그를 사용할 수 있고 안에 section 태그도 넣을 수 있다.
 
-### aside 태그
+#### input
+```
+<article class="forecast">
+  <h1>Weather forcast for seattle</h1>
+    <article>
+      <h2>01 jan 2024</h2>
+      <p>snow</p>
+    </article>
+    <article>
+      <h2>02 feb 2024</h2>
+      <p>sun</p>
+    </article>
+    <article>
+      <h2>03 march</h2>
+      <p>rain</p>
+    </article>
+</article>
 
+#에 링크만 넣으면 클릭시 그 링크로 이동한다.
+```
 
+#### output
+<article class="forecast">
+    <h1>Weather forcast for seattle</h1>
+    <article>
+      <h2>01 jan 2024</h2>
+      <p>snow</p>
+    </article>
+    <article>
+      <h2>02 feb 2024</h2>
+      <p>sun</p>
+    </article>
+    <article>
+      <h2>03 march</h2>
+      <p>rain</p>
+    </article>
+  </article>
 
+### section 태그
+웹 문서에서 콘텐츠 영역을 나타냅니다. article 태그와 비슷해보이기도 한다. 하지만 section 태그는 몇 개의 콘텐츠를 묶는 용도로 사용하고, artticle 태그는 블로그 포스트처럼 독립된 콘텐츠를 사용한다.**단순히 스타일을 적용하려고 큰 콘텐츠를 묶으려면 section태그 대신 div 태그를 사용한다**
+
+#### input
+```
+<main class contents>
+  <section id="naver">
+    <h2>네이버 취업하고 싶어요</h2>
+    <div class="detail">
+      <p>개발자 시켜주세요</p>
+    </div>
+  </section>
+  <section id="google">
+    <h2>google 취업하고 싶어요</h2>
+    <div class="detail">
+      <p>열심히 할게요</p>
+    </div>
+  </section>
+</main>
+```
+#### output
+<main class contents>
+  <section id="naver">
+    <h2>네이버 취업하고 싶어요</h2>
+    <div class="detail">
+      <p>개발자 시켜주세요</p>
+    </div>
+  </section>
+  <section id="google">
+    <h2>google 취업하고 싶어요</h2>
+    <div class="detail">
+      <p>열심히 할게요</p>
+    </div>
+  </section>
+</main>
 
 
 
