@@ -77,5 +77,108 @@ lable 태그는 input 태그와 같은 폼 요소에 레이블을 붙일 때 사
 <label for="user_id">아이디</label>
 <input type="text" id="user_id">
 ```
+# 3.2 사용자 입력을 위한 input 태그
+아이디나 검색어를 입력하는 검색 상자나 로그인 버튼처럼 사용자가 입력할 부분은 주로 input태그를 이용해 넣는다.
+### input 태그 속성 
+input태그에서 입력 형태를 지정할 때는 type 속성을 사용한다. 
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>text</td>
+      <td>한 줄짜리 텍스트를 입력할 수 있는 텍스트 박스를 넣는다. </td>
+    </tr>
+    <tr>
+      <td>passward</td>
+      <td>비밀번호를 입력할 수 있는 텍스트를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>search</td>
+      <td>검색할 때 입력하는 필드를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>URL 주소를 입력하는 필드를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>이메일 주소를 입력할 수 있는 필드를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>tel</td>
+      <td>전화 번호를 입력할 수 있는 필드를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>checkbox</td>
+      <td>주어진 여러 항목에서 2개 이상 선택할 수 있는 체크 박스를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>radio</td>
+      <td>주어진 항목에 한 개 선택할 수 있는 라디오 버튼을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>number</td>
+      <td>숫자를 조절할 수 있는 스핀 박스를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td>숫자를 조절할 수 있는 슬라이드 막대를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>사용자 지역을 기준으로 날짜(연, 월, 일)을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>month</td>
+      <td>사용자 지역을 기준으로 날짜(연, 월)를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>week</td>
+      <td>사용자 지역을 기준으로 날짜(연, 주)를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>사용자 지역을 기준으로 시간(시, 분, 초, 분할 초)을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>datetime</td>
+      <td>국제표준시(UTC)로 설정도니 날짜와 시간(연,월, 일, 시, 분, 초, 분할 초)을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>datetime-local</td>
+      <td>사용자가 있는 지역을 기준으로 날짜와 시간(연, 월, 시, 분, 초, 분할 초)을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>sumit</td>
+      <td>전송버튼을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>reset</td>
+      <td>리셋 버튼을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td>submit 버튼 대신 사용할 이미지를 넣는다.</td>
+    </tr>
+    <tr>
+      <td>button</td>
+      <td>일반 버튼을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>파일을 첨부할 수 있는 버튼을 넣는다.</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>사용자에게는 보이지 않지만 서버로 넘겨주는 값이 있는 필드를 만든다<div class=""></div></td>
+    </tr>
+  </tbody>
+</table>
 
 
