@@ -181,4 +181,6 @@ input태그에서 입력 형태를 지정할 때는 type 속성을 사용한다.
   </tbody>
 </table>
 
+### 텍스트와 비밀번호를 나타내는 type="text"와 type="password"
+텍스트 필드는 폼에서 가장 많이 사용하는 요소
 
