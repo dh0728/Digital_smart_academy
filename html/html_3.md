@@ -65,4 +65,17 @@
     </fieldset>
 </form>
 
+### label 태그
+lable 태그는 input 태그와 같은 폼 요소에 레이블을 붙일 때 사용한다. 레이블(label)은 입력란 가까이에 아이디나 비밀번호처럼 붙여 놓은 텍스트를 말한다. label 태그를 사용하면 폼 요소와 레이블 텍스트가 서로 연결되었다는 것을 웹 브라우저가 알 수 있다. 두 가지 사용 방법이 있다.
+
+#### 태그 안에 폼 요소를 넣는 방법
+```
+<label for="">아이디<input type="text"></label>
+```
+#### label 태그와 폼 요소를 따로 사용하고 for 속성과 폼 요소의 id 속성을 이용해 서로 연결하는 방법
+```
+<label for="user_id">아이디</label>
+<input type="text" id="user_id">
+```
+
 
