@@ -39,3 +39,30 @@
     </tbody>
   </table>
 
+### fieldset, legend 태그
+하나의 폼에 여러 구역을 나누어 표시할 때 fieldset 태그를 사용한다. legned 태그를 사용해서 fieldset로 묶인 그룹에 제목을 붙일 수 있다.
+
+#### input
+```
+<form action="">
+    <fieldset>
+      <legend>가슴</legend>
+    </fieldset>
+    <fieldset>
+      <legend>등</legend>
+    </fieldset>
+</form>
+```
+
+#### output
+
+<form action="">
+    <fieldset>
+      <legend>가슴</legend>
+    </fieldset>
+    <fieldset>
+      <legend>등</legend>
+    </fieldset>
+</form>
+
+
