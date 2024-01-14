@@ -559,5 +559,72 @@ table태그는 표를 만들기 위해 사용하는 태그로 table태그 안에
 폼을 만드는 가장 기존적인 태그. form 태그는 몇 가지 속성을 사용해서 입력 받은 자료를 어떤 방식으로 서버에 넘길 것인지 서버에서 어떤 프로그램을 이용해 처리할 것인지 지정한다. 
 
 
+### 표의 구조를 지정해주는 thead, tbody, tfoot 태그
+제목이나 표 아래쪽에 합계나 요약을 표시하는 표를 만들때 사용할 수 있는 태그이다. table의 t와 **제목(head), 본문(body), 요약(foot)** 을 각각 합친 말이다. 표의 구조를 지정하면 시각 장애인도 화면 낭독기를 통해 표를 쉽게 이해할 수 있다. 표가 한 화면을 넘어갈 경우 자바스크립트를 사용해 thead와 tfoot은 위아래에 고정하고 tbody태그만 스크롤 되도록 할 수 있다.
+
+#### input
+```
+  <table>
+    <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>세트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>가슴</td>
+          <td>60kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>
+        <tr>
+          <td>등</td>
+          <td>40kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>  
+      </tbody>
+      
+      <tfoot>
+        <tr>
+          <th colspan="4">가동범위를 최대로 하자</th>
+        </tr>
+      </tfoot>
+  </table>
+```
+
+#### output
+<table>
+    <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>세트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>가슴</td>
+          <td>60kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>
+        <tr>
+          <td>등</td>
+          <td>40kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>  
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">가동범위를 최대로 하자</th>
+        </tr>
+      </tfoot>
+  </table>
 
   
