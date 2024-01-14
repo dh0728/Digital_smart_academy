@@ -627,4 +627,139 @@ table태그는 표를 만들기 위해 사용하는 태그로 table태그 안에
       </tfoot>
   </table>
 
+### 행이나 열을 합치는 rowspan, colspan 속성
+rowspan 은 행을 합치고 colsapn은 열을 합칠 때 사용하는 태그이다.
+
+#### input 
+```
+  <table>
+    <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>세트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">가슴</td>
+          <td>60kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>
+        <tr>
+          <td>40kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>  
+      </tbody>
+      
+      <tfoot>
+        <tr>
+          <th colspan="4">가동범위를 최대로 하자</th>
+        </tr>
+      </tfoot>
+  </table>
+ ```
+#### output
+  <table>
+    <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>세트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">가슴</td>
+          <td>60kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>
+        <tr>
+          <td>40kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>  
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">가동범위를 최대로 하자</th>
+        </tr>
+      </tfoot>
+  </table>
+
+  ### 열을 묶어주는 col, colgroup 태그
+  특정 열에 배경색을 넣거나 너비를 바꾸기 위해서는 열을 선택할 수 있어야 한다. col태그는 영을 1개만 지정할 때 사용하고 colgroup 태그는 col 태그를 2개 이상 묶어서 사용한다. 두 태그는 반드시 **caption** 태그 다음에 써야 한다. 또한 col 태그를 사용할 때는 colgroup태그 안에 col태그를 포함해 표 전체 열의 개수만큼 col태그를 넣어야 한다. 
+
+#### input
+```  
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="background-color: aqua;">
+      <col>
+      <col style="width: 200px;">
+      <col style="width: 200px;">
+    </colgroup>
+    <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>세트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">가슴</td>
+          <td>60kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>
+        <tr>
+          <td>40kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>  
+      </tbody>
+  </table>
+```
+#### output
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="background-color: aqua;">
+      <col>
+      <col style="width: 200px;">
+      <col style="width: 200px;">
+    </colgroup>
+    <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>세트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">가슴</td>
+          <td>60kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>
+        <tr>
+          <td>40kg</td>
+          <td>12개</td>
+          <td>4세트</td>
+        </tr>  
+      </tbody>
+  </table>
+  
+  
+
   
