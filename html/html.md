@@ -729,39 +729,13 @@ rowspan 은 행을 합치고 colsapn은 열을 합칠 때 사용하는 태그이
   </table>
 ```
 #### output
-  <table>
-    <caption></caption>
-    <colgroup>
-      <col style="background-color: aqua;">
-      <col>
-      <col style="width: 200px;">
-      <col style="width: 200px;">
-    </colgroup>
-    <thead>
-        <tr>
-          <th>용도</th>
-          <th>중량</th>
-          <th>개수</th>
-          <th>세트</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2">가슴</td>
-          <td>60kg</td>
-          <td>12개</td>
-          <td>4세트</td>
-        </tr>
-        <tr>
-          <td>40kg</td>
-          <td>12개</td>
-          <td>4세트</td>
-        </tr>  
-      </tbody>
-  </table>
+<img src="image/col_colgroup_img.png">
 
-  <img src="../image/col_colgroup._img.png">
-  
-  
+# 2.4 이미지 삽입
+### img 태그
+웹 문서에 이미지를 삽입할 때 사용하는 가장 기본적인 태그이다. src 속성은 이미지 파일의 경로를 지정하는 웹 브라우저에 알려주는 역할을 하며 필수적으로 있어야한다. alt속성에는 화면 낭독기 등에서 이미지를 대신해서 읽어줄 텍스트를 입력한다.
+#### input
+```
+<img src="image/NAVER
 
   
