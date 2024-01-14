@@ -815,11 +815,11 @@ HTML4에서는 웹 브라우저에 멀티미디어 파일을 삽입한 후에 �
 
 #### 텍스트 링크 input
 ```
-<a href="https://www.naver.com">네이버 바로가가</a>
+<a href="https://www.naver.com">네이버 바로가기</a>
 ```
 
 #### 텍스트 링크 output
 
-<a href="https://www.naver.com">네이버 바로가가</a>
+<a href="https://www.naver.com">네이버 바로가기</a>
 
   
