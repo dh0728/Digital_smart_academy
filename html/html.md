@@ -759,6 +759,8 @@ rowspan 은 행을 합치고 colsapn은 열을 합칠 때 사용하는 태그이
         </tr>  
       </tbody>
   </table>
+
+  <img src="../image/col_colgroup._img.png">
   
   
 
