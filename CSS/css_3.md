@@ -144,6 +144,62 @@ border 스타일을 지정하는 border-style 속성의 기본값은 nono이므�
   </tbody>
 </table>
 
+### border 두께를 지정하는 border-width 속성
+border-width 속성을 이용해 border 두께를 지정할 수 있는데 크기를 직접 입력할 수도 있고 thin, medium, thick 같은 예약어 중에서 선택할 수도 있다. 또한 상하좌우 4개를 한꺼번에 지정할수도 있는데, 이때 1개, 2개, 3개만 지정할 수도 있고 4개 모두 따로 지정할 수도 있다. 
+
+#### border-width 예시(4개의 border 모두 같은 값)
+```
+#box1 { border-width: 2px}
+
+```
+4개의 border 모두 같이 적용된다.
+
+#### border-width 예시
+```
+#box1 { border-width: think thin}
+
+```
+첫 번째 값인 think이 위아래 border, 두 번째 값인 thin은 좌우 border값이 적용된다.
+
+#### border-width 예시
+```
+#box1 { border-width: think medium thin}
+
+```
+top-right-bottom 순으로 적용되고 빠져있는 left는 마주보고 있는 right와 같은 값을 가진다.
+#### border-width 예시
+```
+#box1 { border-width: 10px 5px 5px 10px}
+
+```
+top-right-bottom-left순으로 적용된다. 
+
+### border-radius 속성
+border-radius 속성을 사용하면 꼭짓점 부분에 원이 있다고 가정하고 둥글게 처리한다. 이미지의 너비와 높이를 같게 만든 다음 border-radius의 반지름을 너비와 높이의 50%값으로 지정하면 원으로 만들수 있다. **border-top-left-radius** 같은 속성을 이용하면 원하는 꼭짓점만 둥글게 만들수 있다.
+#### border-radius 기본형
+```
+border-radius: 크기 or %
+```
+
+# 3.3 여백을 조절하는 속성
+
+### 요소 주변의 여백을 설정하는 margin 속성
+margin은 요소 주변의 여백을 의미한다. 따라서 margin을 이용하면 요소와 요소 사이의 간격을 조절할 수 있다. 앞서 배운 것과 마찬가지로 margin 속성 역시 박스 모델의 4개 방향에 한번에 똑같이 지정할 수 있고, margin-top 처럼 위치를 나타내는 예약어와 함께 사용해서 특정방향만 지정할 수 있다. 
+
+### margin 속성을 사용하여 웹 문서 가운데 정렬하기
+웹 문서에서 텍스트 요소를 배치할 때 text-align 속성을 사용해서 정렬했다. 웹 문서 전체를 화면 중앙에 배치하려면 margin 속성을 이용하는 것이 유용하다. margin 속성을 사용해 웹 문서의 내용을 화면 중앙에 배치하려면 **우선적으로 배치할 요소의 너빗값이 정해져 있어야 한다.** 그리고 **margin-left와 margin-right** 의 속성값이 **auto** 로 지정한다. 이렇게 지정하면 CSS는 웹 브라우저 화면의 너비에서 요소 너빗값을 뺀 나머지 영역을 좌우 margin을 자동계산한다.
+#### margin 속성을 이용하여 가운데 정렬 예시
+```
+margin: 20px auto;
+```
+위아래 margin은 20px씩 주고 좌우 margin은 자동으로 계산한다.
+
+### 마진 중첩 이해하기
+박스 모델에서 margin을 지정할 경우, 요소를 세로로 배치할 경우 각 요소의 margin과 margin이 서로 만나면 margin 값이 큰 쪽으로 겹쳐지는 문제이다. 이것을 **margin overlap(마진 중첩)** 또는 **margin collapse(마진 상쇄)** 라고 한다. 
+
+
+
+
 
 
 
