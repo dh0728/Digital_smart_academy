@@ -84,4 +84,86 @@ box-shadow: <수평 거리> <수직 거리> <흐림 정도> <번짐 정도> <색
   </tbody>
 </table>
 
+# 3.2 테두리 스타일 지정하기
+
+### 박스 모델의 방향 살펴보기
+박스 모델은 상하좌우 4개의 방향이 있어서 border, margin, padding 등을 지정할 때 한꺼번에 같이 지정하거나 모두 다르게 지정할 수 있다. 박스 모델의 방향은 맨 위부터 시작해서 **top-right-bottom-left** 로 시계 방향 순서이다. 
+
+### border 스타일을 지정하는 border-style 속성
+border 스타일을 지정하는 border-style 속성의 기본값은 nono이므로 속성 값을 따로 지정하지 않으면 border 색상이나 두께를 지정하더라도 화면에 표시되지 않는다. 따라서 border을 그리려면 가장 먼저 테두리 스타일의 속성값을 지정해야 한다. 
+
+#### border-style의 속성값
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>none</td>
+      <td>border가 없다. 기본값</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>border를 감춘다. 표에서 border-collapse: collapse일 경우 다른 border도 표시되지 않는다.</td>
+    </tr>
+    <tr>
+      <td>solid</td>
+      <td>border를 실선으로 표시한다.</td>
+    </tr>
+     <tr>
+      <td>dotted</td>
+      <td>border를 점선으로 표시한다.</td>
+    </tr>
+     <tr>
+      <td>dashed</td>
+      <td>border를 짧은 직선으로 표시한다.</td>
+    </tr>
+     <tr>
+      <td>double</td>
+      <td>border를 이중선으로 표시한다. 두 선 사이의 간격이 border-width값이 된다.</td>
+    </tr>
+    <tr>
+      <td>groove</td>
+      <td>border 창에 조각한 것처럼 표시한다. 홈이 파인 듯 입체 느낌이 난다.</td>
+    </tr>
+    <tr>
+      <td>inset</td>
+      <td>표에서 border-collapse: seperate일 경우 전체 박스 border가 창에 박혀 있는 것처럼 표시되고, 표에서 border-collapse: collapse일 경우 groove와 똑같이 표시된다. </td>
+    </tr>
+    <tr>
+      <td>outset</td>
+      <td>표에서 border-collapse: seperate일 경우 전체 박스 border가 창에서 튀어나온 것처럼 표시되고, 표에서 border-collapse: collapse일 경우 ridge와 똑같이 표시된다.</td>
+    </tr>
+    <tr>
+      <td>ridge</td>
+      <td>border를 창에서 튀어나온 것처럼 표시한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
