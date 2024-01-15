@@ -197,6 +197,57 @@ margin: 20px auto;
 ### 마진 중첩 이해하기
 박스 모델에서 margin을 지정할 경우, 요소를 세로로 배치할 경우 각 요소의 margin과 margin이 서로 만나면 margin 값이 큰 쪽으로 겹쳐지는 문제이다. 이것을 **margin overlap(마진 중첩)** 또는 **margin collapse(마진 상쇄)** 라고 한다. 
 
+### 콘텐츠와 테두리 사이의 여백을 설정하는 padding 속성
+padding이란 콘텐츠 영역과 border 사이에 여백을 말한다. padding 속성도 마찬가지로 4개의 방향의 패딩을 한꺼번에 지정할 수 있고, padding-left 같이 예약어를 붙여 특정 방향에만 지정할 수도 있다. 
+
+# 3.4 웹 문서의 레이아웃 만들기
+
+### 배치 방법 결정하는 display 속성
+**display** 속성을 사용하면 블록 레벨 요소와 인라인 레벨 요소를 서로 바꿔서 사용할 수 있다. display 속성은 주로 웹 문서의 네비게이션을 만들면서 메뉴 항목을 가로로 배치할 때 많이 사용하고, 이미지를 표 형태로 배치할 수도 있다.
+
+#### display 속성값
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>block</td>
+      <td>인라인 레벨 요소를 블록 레벨 요소로 만든다.</td>
+    </tr>
+    <tr>
+      <td>inline</td>
+      <td>블록 레벨 요소를 인라인 레벨 요소를 만든다.</td>
+    </tr>
+    <tr>
+      <td>inline-block</td>
+      <td>인라인 레벨 요소와 블록 레벨 요소의 속성을 모두 가지고 있으며 margin과 padding을 지정할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>none</td>
+      <td>해당 요소를 화면에 표시하지 않는다.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
