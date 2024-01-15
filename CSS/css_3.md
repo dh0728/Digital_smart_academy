@@ -233,12 +233,82 @@ padding이란 콘텐츠 영역과 border 사이에 여백을 말한다. padding 
   </tbody>
 </table>
 
+#### 블록 레벨 요소 였던 네비게이션을 인라인을 바꾼후 수평 네비게이션으로 만들기 
+```
+<style>
+
+ul li{
+  display: inline-black;
+}
+
+</style>
+.....
+
+<nav>
+  <ul>
+    <li>menu 1</li>
+    <li>menu 2</li>
+    <li>menu 3</li>
+    <li>menu 4</li>
+  </ul>
+</nav>
+
+(... 생략 ...)
+```
+
+### 왼쪽이나 오른쪽으로 배치하는 float 속성
+웹 문서를 만들다 보면 p태그처럼 문단의 왼쪽이나 오른쪽에 이미지를 나란히 표시해야 할 경우가 있다. p태그는 블록 레벨 요소이므로 이미지와 나란히 한 줄에 배치 할 수 없다. 이럴 때 float 속성을 사용해 이미지를 표시하고 그 주변에 텍스트가 들러 싸도록 할 수 있다. **float** 속성은 웹 요소를 문서 위에 떠 있게 만든다. '떠 있다'는 것은 요소가 왼쪽구석이나 오른쪽 구석에 배치된다는 것을 말한다.
+#### float 속성표
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>left</td>
+      <td>해당 요소를 문서의 왼쪽에 배치한다.</td>
+    </tr>
+    <tr>
+      <td>right</td>
+      <td>해당 요소를 문서의 오른쪽에 배치한다.</td>
+    </tr>
+    <tr>
+      <td>none</td>
+      <td>좌우 어느 쪽에도 배치하지 않는다. 기본값이다.</td>
+    </tr>
+  </tbody
+</table>
 
 
+### float 속성을 해제하는 clear 속성
+float 속성을 사용해 웹 요소를 왼쪽이나 오른쪽에 배치하면 그 다음에 넣는 다른 요소에도 똑같은 속성이 전달된다. 따라서 float속성이 더 이상 유용하지 않다고 알려주는 속성이 필요한데, 이것이 **clear 속성** 이다. 
 
-
-
-
+#### clear 속성표
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>left</td>
+      <td>float: left를 해제한다.</td>
+    </tr>
+    <tr>
+      <td>right</td>
+      <td>float: right를 해제한다.</td>
+    </tr>
+    <tr>
+      <td>both</td>
+      <td>float: left와 float: right를 해제한다.</td>
+    </tr>
+  </tbody
+</table>
 
 
 
