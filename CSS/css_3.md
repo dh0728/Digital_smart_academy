@@ -12,7 +12,7 @@ css 박스 모델이란 웹 문서의 내용을 박스 형태로 정의하는 �
 박스 모델은 **콘텐츠 영역** , 박스와 콘텐츠 영역 사이의 여백인 **패딩(padding)** , 박스의 **테두리(border)** , 여러 박스 모델 사이의 여백인 **마진(margin)** 등의 요소로 구성된다. padding, border, margin은 각각 상하좌우로 나뉘어 있어 네 방향의 스타일응 따로 설정할 수 있다.
 
 #### 박스 모델의 기본 요소
-<img src="image/box_model.png">
+<img src="image/box_modelimg.png">
 
 ### 박스 모델의 크기를 계산하는 box-sizing 속성
 width 속성과 height 속성은 박스 모델에서 콘텐츠 주변의 여백이나 border를 뺸 콘텐츠 영역의 크기를 가르킨다. 때문에 웹 문서에 여러 가지 요소를 배치할 때 실제 박스 모델이 차지하는 크기는 콘텐츠 영역 외에도 콘텐츠와 border사이의 여백, 테두리 두께 까지 계산해야 한다. 생각만 해도 이건 너무 귀찮다. 이것이 box-sizing속성이 필요한 이유이다. box-sizing은 박스 모델의 너비와 높이를 어떻게 결정할 것인지에 따라 **border-box** 와 **content-box** 중에서 선택할 수 있다.
@@ -40,7 +40,7 @@ width 속성과 height 속성은 박스 모델에서 콘텐츠 주변의 여백�
 CSS에서는 box-shadow 속성을 사용하면 다른 프로그램 없이 그림자 효과를 줄 수 있다. **box-shadow의 속성값에서 수평 거리와 수직 거리는 반드시 지정해야 한다.** 나머지는 옵션이므로 필요할 시만 사용하면 된다.
 
 #### 수직거리와 수평거리의 값에 따른 그림자 위치
-<img src="image/box_shadow.png>
+<img src="image/box_shadow.png">
 
 
 
