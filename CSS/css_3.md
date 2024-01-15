@@ -308,10 +308,45 @@ float 속성을 사용해 웹 요소를 왼쪽이나 오른쪽에 배치하면 �
       <td>both</td>
       <td>float: left와 float: right를 해제한다.</td>
     </tr>
-  </tbody
+  </tbody>
 </table>
 
+# 3.5 웹 요소의 위치 지정하기
+웹 문서에서 이미지나 글씨를 원하는 위치에 넣고 싶지만 그것은 생각보다 쉽지 않다. position 속성을 사용하면 웹 문서에서 요소의 위치를 자유롭게 정할 수 있다. 
 
+### 웹 요소의 위치를 정하는 left, right, top, bottom 속성
+position 속성으로 기준 위치를 정한 뒤 요소의 위치를 left, right, top, bottom속성에서 선택하고 속성값을 지정하면 된다.
+
+### 배치 방법을 지정하는 position속성
+position 속성을 이용하면 텍스트나 이미지 요소를 나란히 배치할 수도 잇고 원하는 위치를 선택할 수 있다. 이렇게 요소를 다양하게 배치하려면 position속성에서 사용하는 속성 값의 특성을 잘 이해해햐 한다.
+
+#### position 속성값
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>static</td>
+      <td>문서의 흐름에 맞춰 배치한다. 기본값</td>
+    </tr>
+    <tr>
+      <td>relative</td>
+      <td>위칫값을 지정할 수 있다는 점을 제외하면 static과 같다.</td>
+    </tr>
+    <tr>
+      <td>absolute</td>
+      <td>relative값을 사용한 상위 요소를 기준으로 위치를 지정해 배치한다.</td>
+    </tr>
+     <tr>
+      <td>fixed</td>
+      <td>브라우저 창을 기준으로 위치를 지정해 배치한다.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
