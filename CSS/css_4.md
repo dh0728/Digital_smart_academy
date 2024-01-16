@@ -106,11 +106,97 @@ background-position 속성을 이용하면 이미지의 수평 위치 또는 수
   </tbody>
 </table>
 
+### background-attachment 속성으로 배경이미지 고정하기
+배경 이미지가 있는 웹 문서를 웹 브라우저에서 열고 스크롤 막대를 위아래로 조절하면서 문서 전체가 움직이므로 배경 이미지도 함께 이동한다. 이를 background-attachment 속성을 통해 고정할 수 있다.
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>scroll</td>
+      <td>화면을 스크롤하면 배경 이미지도 스크롤 된다. 기본값</td>
+    </tr>
+    <tr>
+      <td>fixed</td>
+      <td>화면을 스크롤하면 배경 이미지는 고정되고 내용만 스크롤된다.</td>
+    </tr>
+  </tbody>
+</table>
+
+### background 속성 하나로 줄여서 사용하기
+앞에서 설명했던 background관련 이미지 속성들을 하나로 줄여서 사용할 수 있다. 속성값이 다르기 때문에순서는 상관이 없다
+#### 예시
+```
+body{
+  background-image: url('이미지 경로');
+  background-repeat: no-repeat:
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+body{
+  background: url('이미지 경로') no-repeat center bottom fixed;
+}  
+```
+
+### background-size 속성으로 배경 이미지 크기 조절하기
+배경을 채울 요소 크기에 비해 이미지가 너무 작거나 클 경우 background-size 속성을 사용하여 배경 이미지 크기를 조절 할 수 있다. 이 속성은 화면에 배경이미지를 가득 채워야 할 경우 유용하다. 속성값이 하나일 경우 그 값은 너비로 인식하고 높이는 원래 이미지의 너비와 높이 비율에 따라 자동 계산한다.
+#### background-size 속성값 
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>auto</td>
+      <td>원래 배경 이미지 크기만큼 표시한다. 기본값</td>
+    </tr>
+    <tr>
+      <td>contain</td>
+      <td>요소 안에 배경 이미지가 다 들어오도록 이미지를 확대 축소한다.</td>
+    </tr>
+    <tr>
+      <td>cover</td>
+      <td>배경 이미지로 요소를 모두 덮도록 이미지를 확대, 축소한다.</td>
+    </tr>
+    <tr>
+      <td>크기</td>
+      <td>이미지의 너비와 높이를 지정한다. 값이 하나만 주어질 경우 너비로 인식하고 높잇값은 비율에 맞춰 자동계산한다.</td>
+    <tr>
+      <td>백분율</td>
+      <td>배경 이미지가 들어갈 요소의 크기를 기준으로 값을 백분율로 지정하고 그 크기에 맞도록 배경 이미지를 확대 축소한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+# 4.3 그러데이션 효과로 배경 꾸미기
+
+### 선형 그러데이션
+신형 그러데이션이란 색상이 수직, 수평 또는 대각선 방향으로 일정하게 변하는 것을 말한다. 이것을 만들어 주는 함수는 linear-gradient이다. 색상이 바뀌는 방향, 색상 종류를 알려 주어야 한다. <br>
+**방향** 을 지시랄 때는 끝 지점을 기준으로 to 예약어와 함께 사용한다. to 다음에 방향을 나타내는 예약어는 최대 2개까지 사용할 수 있다. 이때 예약어는 수평 뱡향을 나타내는 left와 right, 수직 방향을 나타내는 top과 bottom을 사용한다. <br>
+**각도** 는 선형 그러데이션에서 색상이 바뀌는 방향을 알려 주는 방법이다. 이때 각도는 그러데이션이 끝나는 부분이고 값은 **deg** 로 표시한다. <br>
+**색상 중지점** 2가지 색 이상의 선형 그러데이션을 만들려면 색상이 바뀌는  부분
 
 
+#### 선형 그러데이션 기본형, 예시
+```
+linear-gradient(to <방향> 또는 <각도>, <색상 중지점>, [<색상 중지점>]...);
 
 
+background: linear-gradient(to right bottom, blue, white);
+/*왼쪽 위에서 오른쪽 아래방향으로, 파란색에서 흰색으로 */
 
+background: linear-gradient(45deg, #f00, #fff);
+/*45도 방향, 빨간색에서 흰색으로 */
+```
 
 
 
