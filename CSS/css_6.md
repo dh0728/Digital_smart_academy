@@ -296,9 +296,50 @@ CSS3의 animation 속성을 사용하면 자바스크립트를 사용하지 않�
   </tr>  
 </table>
 
+### @keyframes 속성, animation-name속성
+애니메이션의 시작과 끝을 비롯하여 상태가 바뀌는 부분이 있으면 **@keyframes 속성을 이용해 바뀌는 지점을 설정**한다. 또한 웹 문서에서는 애니메이션을 여러 개 정의할 수 있으므로 **이름**을 이용해 애니메이션을 구별해야 한다. 이떄 **animation-name 속성으로 어떤 애니메이션을 사용할지 이름으로 구분**한다. <br>
+**@keyframes**속성에서 사용하는 선택자는 스타일 속성값이 바뀌는 지점을 가르킨다. 예를 들어 애니메이션의 중간 지점을 추가하려면 시작 위치를 0%, 끝 위치를 100%로 놓고 50%위치에 키프레임을 추가하면 된다. 시작과 끝 위치만 사용하려면 0%, 100%와 같은 값 대신 from과 to라는 키워드를 사용해도 된다.
+```
+/*기본형*/
+@keyframes <이름> {
+  <선택자> { <스타일> }
+}
 
+animation-name: <키프레임 이름> | none
+```
+### animation-duration 속성
+animation-duration 속성은 **애니메이션을 얼마 동안 재생할 것인지 설정**한다. 사용할 수 있는 속성값은 초와 밀리초 같은 시간 단위이다. 기본값은 0이므로 속성값을 지정하지 않으면 애니메이션은 실행되지 않는다. 
+```
+/*기본형*/
+animation-duration: <시간>
+```
 
-
+#### 애니메이션의 지점, 이름, 실행시간 지정 예시
+```
+#box1 {
+  background-color: #4cff00;
+  border: 1px solid transparent;
+  animation-name: shape;         /*애니메이션 지정*/ 
+  animation-duration: 3s;        /*애니메이션 실행시간*/ 
+}
+#box2 {
+  background-color: #000f00;
+  border: 1px solid transparent;
+  animation-name: rotate;        /*애니메이션 지정*/                  
+  animation-duration: 2s;        /*애니메이션 실행시간*/
+}
+@keyframes shape {
+  from { border: 1px solid transparent; }  /* 1px 투명 테두리에서 */
+  to {
+    border: 1px solid #000;                /* 검은색 테두리로 변경 */
+    border-radius: 50%;                    /* 테두리를 둥글게 변경 */
+  }
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }        /* 0도에서 시작해서 */
+  to { transform: rotate(45deg);]          /* 45도까지 회전하기 */
+}
+```
 
 
 
