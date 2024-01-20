@@ -374,30 +374,7 @@ animation-direction: normal | reverse | alternate | alternate-reverse
   </tr>
 </table>
 
-### animation-iteration-count 속성
-애니메이션을 반복해서 보여 줘야 할 때 사용해 반복 횟수를 정한다.
-```
-/*기본형*/
-animation-iteration-count: <숫자> | infinite
-```
-<table>
-  <thead>
-    <tr>
-      <th>종류</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tr>
-    <td>숫자</td>
-    <td>애니메이션 반복 횟수를 정한다</td>  
-  </tr>
-  <tr>
-    <td>infinite</td>
-    <td>애니메이션을 무한 반복한다.</td> 
-  </tr>
-</table>
-
-
+#성
 
 
 
