@@ -118,6 +118,216 @@ trnasfrom: 함수
 </table>
 
 
+# 6.2 트랜지션 알아보기
+
+## 트랜지션이란
+**트랜지션(transition)**은 웹 요소의 배경색을 바꾸거나 도형의 테두리를 사각형에서 원형으로 바꾸는 것처럼 스타일 속성을 바뀌는 것을 말한다. 트랜지션에서는 스타일이 바뀌는 시간을 조절하여 자바스크립트를 사용하지 않고도 애니메이션 효과를 낼 수 있다. 
+#### 트랜지션의 속성
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>transition-property</td>
+    <td>트랜지션 대상을 지정한다.</td>  
+  </tr>
+  <tr>
+    <td>transition-duration</td>
+    <td>트랜지션을 실행할 시간을 지정한다.</td> 
+  </tr>
+  <tr>
+    <td>transition-timing-function</td>
+    <td>트랜지션의 실행 형태를 지정한다.</td>
+  </tr>
+  <tr>
+    <td>transition-delay</td>
+    <td>트랜지션의 지연 시간을 조정한다.</td>
+  </tr>
+  <tr>
+    <td>transition</td>
+    <td>transition-property, transition-duration, transition-timing-function, transition-delay 속성을 한꺼번에 정의한다.</td>
+  </tr>
+  <tr>
+    <td>cubic-bezuer(n,n,n,n)</td>
+    <td>베지에 함수를 정의해서 사용한다. 이떄 n값은 0~1사이만 사용할 수 있다.</td>
+  </tr>
+</table>
+
+
+
+### transition-property 속성
+트랜지션을 만들려면 맨 먼저 transition-property 속성을 사용하여 어떤 속성에 트랜지션을 적용할 것인지 대상을 지정해야 한다.
+
+#### transition-property 기본형
+```
+/* 기본형 */
+transition-property : all | none | <속성이름>
+
+/* 예시 */
+transition-property : all;                 /* 해당 요소의 모든 속성에 트렌지션 적용
+transition-property : background-color;    /* 해당 요소의 배경색에 트렌지션 적용
+transition-property : width, height;       /* 해당 요소의 너비와 높이에 트렌지션 적용
+```
+
+### transition-duration 속성
+transition-property로 트랜지션 대상을 지정했다면 다음으로 진행 시간을 지정해야 속성이 자연스럽게 바뀌는 애니메이션 효과를 만들 수 있다. 진행 시간은 **transition-duration 속성**으로 지정할 수 있다. 지정할 수 있는 시간 단위는 초 또는 밀리초 이다. 트랜지션의 대상 속성일 여러 개라면 진행 시간도 쉽표(,)로 구분해서 여러 개를 지정할 수 있다.
+```
+/* 기본형 */
+transition-duration: <시간>
+
+/* 예시 */
+transition-property: width, height;
+transition-duration: 2s, 1s;
+```
+
+### transition-timing-function 속성
+transition-timing-function 속성을 사용하면 트랜지션 효과의 시작, 중간, 끝에서 속도를 지정해 전체 속도 곡선을 만들 수 있다. 속도 곡선은 미리 정해진 키워드나 베지에 곡선을 이용해 표현 한다.
+```
+/* 기본형 */
+transition-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n, n, n, n)
+```
+#### transition-timing-function 속성값
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>ease</td>
+    <td>처음에는 천천히 시작하고 점점 빨라지다가 마지막엔 천천히 끝낸다. 기본값</td>  
+  </tr>
+  <tr>
+    <td>linear</td>
+    <td>시작부터 끝까지 똑같은 속도로 진행한다.</td> 
+  </tr>
+  <tr>
+    <td>ease-in</td>
+    <td>느리게 시작한다.</td>
+  </tr>
+  <tr>
+    <td>ease-out</td>
+    <td>느리게 끝낸다.</td>
+  </tr>
+  <tr>
+    <td>ease-in-out</td>
+    <td>느리게 시작하고 느리게 끝난다.</td>
+  </tr>
+  <tr>
+    <td>cubic-bezuer(n,n,n,n)</td>
+    <td>베지에 함수를 정의해서 사용한다. 이떄 n값은 0~1사이만 사용할 수 있다.</td>
+  </tr>
+</table>
+
+### transition-delay 속성
+transition-delay 속성은 트랜지션 효과를 언제부터 시작할 것인지 설정한다. 사용할 수 있는 값은 초나 밀리초이고 기본값은 0이다.
+```
+/*기본형*/
+transiton-delay: <시간>
+```
+
+### transition 속성
+트랜지션 적용 대상이 전체이고 각각의 진행시간이 같다면 transition 속성으로 한꺼번에 할 수 있다.
+```
+/* 기본형 */
+transition : <transition-property값> | <transition-duration값> | <transition-timing-function값> | <transition-delay값>
+
+/* 예시 */
+
+transition: 2s ease-in
+
+/*
+transition-property: 기본값 all
+transition-duration: 2s
+transition-timing-function: ease-in
+transition-delay: 기본값 0   
+ */
+```
+
+# 6.3 애니메이션 알아보기
+
+### CSS 애니메이션에서 사용하는 속성
+CSS3의 animation 속성을 사용하면 자바스크립트를 사용하지 않고도 웹 요소에 애니메이션을 추가할 수 있다. animation 속성은 특정 지점에서 스타일을 바꾸면서 애니메이션을 만드는데, 이렇게 애니메이션 중간에 스타일이 바뀌는 지점을 **키프레임(keyframe)** 이라고 한다. 키프레임은 **@keyframes**속성으로 정의하고, animation속성과 그 하위 속성을 이용해서 애니메이션의 실행 시간이나 반복 여부 등을 지정한다. 
+
+#### 애니메이션 속성
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>@keyframes</td>
+    <td>애니메이션이 바뀌는 지점을 지정한다.</td>  
+  </tr>
+  <tr>
+    <td>animation-delay</td>
+    <td>애니메이션의 시작 시간을 지정한다.</td> 
+  </tr>
+  <tr>
+    <td>animation-direction</td>
+    <td>에니메이션을 종료한 뒤 처음부터 시작할지, 역방향으로 진행할지 지정한다.</td>
+  </tr>
+  <tr>
+    <td>animation-duration</td>
+    <td>애니메이션의 실행 시간을 지정한다.</td>
+  </tr>
+  <tr>
+    <td>animation-iteration-count</td>
+    <td>애니메이션의 반복 횟수를 지정한다.</td>
+  </tr>
+  <tr>
+    <td>animation-name</td>
+    <td>@keyframes로 설정해 놓은 중간 상태를 지정한다.</td>
+  </tr>
+  <tr>
+    <td>animation-timng-function</td>
+    <td>키프레임의 전환 형태를 지정한다.</td>
+  </tr>
+  <tr>
+    <td>animation</td>
+    <td>animation 속성을 한꺼번에 묶어서 지정한다.</td>
+  </tr>  
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
