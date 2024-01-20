@@ -341,6 +341,62 @@ animation-duration: <시간>
 }
 ```
 
+### animation-direction 속성
+애니메이션은 기본적으로 keyframes에서 정의한 from에서 to 순서로 진행하는데 animation-direction속성을 사용해서 진행 방향을 바꿀 수 있다.
+```
+/*기본형*/
+animation-direction: normal | reverse | alternate | alternate-reverse
+```
+
+#### animation-direction 속성값
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>normal</td>
+    <td>애니메이션을 from에서 to로 진행한다. 기본값</td>  
+  </tr>
+  <tr>
+    <td>reverse</td>
+    <td>애니메이션을 to에서 from으로, 원래 방향과는 반대로 진행한다.</td> 
+  </tr>
+  <tr>
+    <td>alternate</td>
+    <td>홀수 번째는 normal로, 짝수 번쨰는 reverse로 진행한다.</td>
+  </tr>
+  <tr>
+    <td>alternate-reverse</td>
+    <td>홀수 번째는 reverse로, 짝수 번째는 normal로 진행한다.</td>
+  </tr>
+</table>
+
+### animation-iteration-count 속성
+애니메이션을 반복해서 보여 줘야 할 때 사용해 반복 횟수를 정한다.
+```
+/*기본형*/
+animation-iteration-count: <숫자> | infinite
+```
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>숫자</td>
+    <td>애니메이션 반복 횟수를 정한다</td>  
+  </tr>
+  <tr>
+    <td>infinite</td>
+    <td>애니메이션을 무한 반복한다.</td> 
+  </tr>
+</table>
+
 
 
 
