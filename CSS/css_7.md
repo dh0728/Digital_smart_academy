@@ -839,27 +839,229 @@ CSS 그리드 레이아웃은 가로 방향을 가르키는 **줄(row)** 와 세
 
 
 ### 상대적인 크기를 지정하는 fr단위 
+그리드 레이아웃에서 칼럼이나 줄의 크기를 지정할 때 픽셀을 이용하면 항상 크기가 고정되므로 반응형 웹 디자인에는 적합하지 않다. 그래서 그리드 레이아웃에서는 상대적인 크기를 지정할 수 있는 **fr(fraction)** 을 사용한다. 
+```
+/* 칼럼을 2 : 1 :2 로 배치하고 싶다면 */
+gird-template-column : 2fr 1fr 2fr;
+```
 
+### 값이 반복될 때 줄여서 표현할 수 있는 repeat()함수
+px나 fr단위를 사용하면 똑같은 값을 여러 번 반복해야 한다. CSS 그리드 레이아웃에는 내장된 repeat()이라는 함수를 사용하면 반복하지 않고 간단하게 표현할 수 있다. 
+```
+grid-template-column: 1fr 1fr 1fr; -> gird-temlplate-column: repeat(3, 1fr)
+```
+### 최솟값 최댓값을 지정하는 minmax()함수
+줄 높이보다 내용이 많을 경우 내용이 가려지게 되는데 이때 **minmax()함수**를 사용하면 줄 높이를 고정하지 않고 최솟값과 최댓값을 사용해서 유연하게 지정할 수 있다. 
 
+#### minmax()함수 사용예시
+```
+#wrapper{
+  width:600px;
+  display:grid;  /* 그리드 컨테이너 지정 */
+  grid-template-columns:repeat(3, 1fr);  /* 너비가 같은 칼럼 3개 */
+  grid-template-rows: minmax(100px, auto);  /* 줄 높이 최소 100px 최댓값 auto*/
+}
+```
+#### 결과값
+<img src="./image/grid2.png">
 
+### 자동으로 칼럼 개수를 조절하는 auto-fill, auto-fit 값
+앞에서 repeat()함수를 사용해서 크기가 같은 칼럼을 반복할 때는 다음과 같은 칼럼의 개수를 지정했다. 이떄 칼럼의 너빗값과 함께 auto-fit이나 auto-fill을 지정하면 화면 너비에 따라 칼럼 개수를 조절할 수 있다. auto-fill, auto-fit 모두 칼럼의 개수가 화면 크게에 따라 조절되지만 차이점은 **남은 공간을 채울지 여부**이다. **auto-fit**를 사용하면 화면이 넓을 때에는 **남는 공간 없이 꽉채워** 표시하고 **auto-fill**을 사용하면 **칼럼의 최소너비만 표시**하고 남는 공간은 그대로 둔다.
 
+#### auto-fill, auto-fit 예시
+```
+#wrapper1{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  /* 화면을 꽉 채울만큼 칼럼 너비를 늘려서 표시 */
+  margin-bottom:20px;
+}
+#wrapper2{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));  /* 칼럼 최소 너비만큼 채워서 표시 */
+}    
+```
+#### 결과값
+<img src="./image/grid3.png">
 
+### 그리드 항목의 간격을 지정하는 grid-column-gap, grid-row-gap, grid-gap
+항목과 항목 사이의 간격을 조절하려면 다음과 같은 속성을 이용한다.
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>grid-column-gap</td>
+    <td>칼럼과 칼럼 사이의 간격을 지정한다.</td>
+  </tr>  
+  <tr>
+    <td>grid-row-gap</td>
+    <td>줄과 줄 사이의 간격을 지정한다.</td>
+  </tr>
+  <tr>
+    <td>grid-gap</td>
+    <td>칼럼과 줄 사이의 간격을 한꺼번에 지정한다.</td>
+  </tr>
+</table>
 
+#### grid-gap 사용 예시
+```
+#wrapper{
+  display:grid;
+  grid-template-columns:repeat(3, 200px);  /* 너비 200px인 칼럼 3개 */
+  grid-template-rows: minmax(100px, auto);  
+  grid-gap:20px 30px;  /* 칼럼 간격 30px, 줄 간격 20px  */
+  /* grid-column-gap:30px; */
+  /* grid-row-gap:20px; */
+}
+```
+#### 결과값
+<img src="./image/grid4.png">
 
+### 그리드 라인을 이용해 배치하기
+그리드 레이아웃에는 눈에 보이지 않는 그리드 라인이 포함되어 있다. 
+<img src="./image/gridline.png">
+그림의 경우 칼럼라인은 번호가 메겨진 대로  총 4개이고 줄라인 역시 4개이다. 이 그리드 라인을 이용해서 그리드 항목을 배치할 수 있다. 이떄 사용하는 속성은 아래와 같다.
+#### 그리드 라인을 이용해 그리드 항목을 배치하는 속성
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+    <th>예시</th>
+  </tr>
+  <tr>
+    <td>grid-column-start</td>
+    <td>칼럼 시작의 라인 번호를 지정한다.</td>
+    <td>gird-column-start:1</td>
+  </tr>  
+  <tr>
+    <td>grid-column-end</td>
+    <td>칼럼 마지막의 라인 번호를 지정한다.</td>
+    <td>grid-column-end:4</td>
+  </tr>
+  <tr>
+    <td>grid-column</td>
+    <td>칼럼 시작 번호와 칼럼 끝 번호 사이의 슬래시(/)를 넣어 사용한다.</td>
+    <td>gird-column: 1/4</td>
+  </tr>
+  <tr>
+    <td>grid-row-start</td>
+    <td>줄 시작의 라인 번호를 지정한다..</td>
+    <td>grid-row-start:2</td>
+  </tr>
+  <tr>
+    <td>grid-row-end</td>
+    <td>줄 시작의 라인 번호를 지정한다..</td>
+    <td>grid-row-end:4</td>
+  </tr>
+  <tr>
+    <td>grid-row</td>
+    <td>줄 시작 번호와 줄 끝 번호 사이에 슬래시(/)를 넣어 사용한다.</td>
+    <td>grid-row:2/4</td>
+  </tr>
+</table>
 
+#### 그리드 라인 배치 예시
+```
+  <style>
+    .container{
+      display: grid;
+      width: 700px;
+      grid-template-columns: repeat(3, 1fr);  /*칼럼은 1fr씩 3개*/
+      grid-template-rows: repeat(3, 100px);   /*줄은 100px씩 3개*/
+    }
+    .box{
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+    }
+    .box1{
+      background-color: blue;
+      grid-column: 1/4;
+    }
+    .box2{
+      background-color: greenyellow;
+      grid-row: 2/4;
+    }
+    .box3{
+      background-color: orange;
+      grid-row-start: 2;
+      grid-column: 2/4;
+    }
+    .box4{
+      background-color: yellow;
+      grid-column-start: 3;
+      grid-row-start: 3;
+    }
+  </style>
 
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>
+```
+#### 결과값
+<img src="./image/grid5.png">
 
+### 탬플릿 영역을 만들어 배치하기
+앞에서 살펴본 그리드 라인은 시작 번호와 끝 번호를 일일이 지정해서 레이아웃을 만들어야 했다. 탬플릿 영역으로 항목을 배치하면 그리드 레이아웃을 만드는 것보다 훨씬 쉽다. **grid-area 속성**을 사용한다.
+#### 탬플릿 영역 만들기 예시
+```
+<style>
+    .container{
+      display: grid;
+      width: 700px;
+      grid-template-columns: repeat(3, 1fr);  /*칼럼은 1fr씩 3개*/
+      grid-template-rows: repeat(3, 100px);   /*줄은 100px씩 3개*/
+      grid-template-areas: 
+        "box1 box1 box1"
+        "box2 box3 box3"
+        "box2 . box4";
+    }
+    .box{
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+    }
+    .box1{
+      background-color: blue;
+      grid-area: box1;
+    }
+    .box2{
+      background-color: greenyellow;
+      grid-area: box2;
+    }
+    .box3{
+      background-color: orange;
+      grid-area: box3;
+    }
+    .box4{
+      background-color: yellow;
+      grid-area: box4;
+    }
+  </style>
 
-
-
-
-
-
-
-
-
-
-
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>
+```
+#### 결과값
+<img src="./image/grid6.png">
 
 
 
