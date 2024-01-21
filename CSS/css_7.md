@@ -552,12 +552,122 @@ flex-wrap 속성은 플렉스 컨테이너 너비 보다 많은 플렉스 항목
 <img src="./image/flex2.png">
 
 
+### 배치 방향과 줄 바꿈을 한꺼번에 지정하는 flex-flow 속성
+**flex-flow속성**은 **flex-direction 속성**과 **flex-wrap 속성**을 **한꺼번**에 지정하여 플렉스 항목의 배치 방향을 결정하거나 줄을 바꾼다. 기본값은 row nowrap이다.
 
+### 주축 정렬 방법을 지정하는 justify-content 속성
+**justify-content 속성**은 주축에서 플렉스 항목 간의 정렬 방법을 지정한다. 
 
+#### justify-content 속성표
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>flex-start</td>
+    <td>주축의 시작점에 맞춰 배치한다.</td>
+  </tr>  
+  <tr>
+    <td>flex-end</td>
+    <td>주축의 끝점에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>center</td>
+    <td>주죽의 중앙에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>space-between</td>
+    <td>첫 번째 항목과 끝 항목을 주축으로 시작점과 끝점에 배치한 후 나머지 항목은 그 사이에 같은 간격으로 배치한다.</td>
+  </tr>
+  <tr>
+    <td>space-around</td>
+    <td>모든 항목을 주축으로 같은 간격으로 배치한다.</td>
+  </tr>
+</table>
 
+#### justify-content속성 예시
+```
 
+...생략..
 
+#opt1{
+  justify-content: flex-start;    /* 주축 시작점 기준으로 배치 */
+}
+#opt2{
+  justify-content: flex-end;      /* 주축 끝점 기준으로 배치 */  
+}
+#opt3{
+  justify-content: center;       /* 주축 중앙 기준으로 배치 */
+}
+#opt4{
+  justify-content: space-between;   /* 시작점과 끝점 배치 후 중간 항목은 같은 간격으로 배치 */ 
+}    
+#opt5{
+  justify-content: space-around;    /* 전체 항목을 같은 간격으로 배치 */ 
+}
 
+...생략..
+```
+#### 결과값
+<img src="./image/flex4.png">
+
+### 교차축 정렬 방법을 지정하는 align-items 속성
+justifly-content 속성이 주축으로 항목을 정렬한단면 aling-items 속성은 **교차축을 기준**으로 플렉스 상목을 정렬한다. 
+
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>flex-start</td>
+    <td>교차축의 시작점에 맞춰 배치한다.</td>
+  </tr>  
+  <tr>
+    <td>flex-end</td>
+    <td>교차축의 끝점에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>center</td>
+    <td>교차축의 중앙에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>baesline</td>
+    <td>교차축의 문자 기준선에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>stretch</td>
+    <td>플렉스 항목을 늘려 교차축에 가득 차게 배치한다.</td>
+  </tr>
+</table>
+
+#### align-items 속성 예시
+```
+...생략...
+
+#opt1{
+  align-items: flex-start;   /* 교차축 시작점 기준으로 배치 */
+}
+#opt2{
+  align-items: flex-end;     /* 교차축 끝점 기준으로 배치 */     
+}
+#opt3{
+  align-items: center;       /* 교차축 중앙 기준으로 배치 */
+}
+#opt4{
+  align-items: baseline;      /* 문자 기준선에 맞춰 배치, 글자크기 다르게 셋팅*/
+} 
+#opt5{
+  align-items: stretch;       /* 항목을 늘려 교차축에 가득차게 배치 */
+}         
+...생략...
+```
+#### 결과값
+<img src="./image/flex5.png">
+
+### 특정 항목만 정렬 방법을 지정하는 align-self속성
+align-item속성은 교차축을 기준으로 플렉스 항목의 정렬 방법을 결정하지만 그중에서 특정 항목만 지정하고 싶다면 align-self 속성을 사용한다. 그래서 align-item 속성은 플렉스 컨테이너를 지정하는 선택자에서 사용하지만 align-self 속성은 **플렉스 항목 선택자**에서 사용한다. align-self 속성에서 사용하는 값은 align-items 속성에서 사용하는 값과 같다. 
 
 
 
