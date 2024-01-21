@@ -374,7 +374,44 @@ animation-direction: normal | reverse | alternate | alternate-reverse
   </tr>
 </table>
 
-#성
+### animation-iteration-count 속성
+상황에 따라 애니메이션을 반복해서 보여줘야 할 때는 animation-iteration-count 속성을 사용해 반복 횟수를 정한다.
+```
+/* 기본형 */
+animation-iteration-count: <숫자> | infinite
+```
+#### animation-iteration-count 속성값
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>숫자</td>
+    <td>애니메이션의 반복 횟수를 정한다.</td>  
+  </tr>
+  <tr>
+    <td>infinite</td>
+    <td>애니메이션을 무한 반복한다.</td> 
+  </tr>
+</table>
+
+### animation-timing-function 속성
+트렌제션과 마찬가지로 animation에서도 애니메이션의 시작, 중간, 끝에서 속도를 지정하여 전체 속도 곡선을 만들 수 있다.
+```
+/* 기본형 */
+animation-timing-function:: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n, n, n, n)
+```
+
+### 에니메이션의 속성을 한꺼번에 표기하는 animation 속성
+앞서 설명한 속성들을 한 줄씩 따로 작성하지 않고 한꺼번에 표기할 수 있다. 이때 animation-duration 속성은 반드시 표기해야 한다. 애니메이션 실행시간을 지정하지 않으면 기본값이 0으로 적용되어 효과를 볼 수 없기 때문이다.
+```
+/* 기본형 */
+animation: <animation-name> | <animation-duration> | <animation-timing-function> | <animation-delay> | <animation-iteration-count> | <animation-direction>
+```
+
 
 
 
