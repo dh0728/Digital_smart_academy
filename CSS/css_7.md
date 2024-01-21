@@ -11,13 +11,74 @@
 ### 뷰포트 지정하기
 뷰포트는 meta 태그를 이용해 head 태그 사이에 작성한다. 
 
-
-
+#### 뷰포트의 속성
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+    <th>사용 가능한 값</th>
+    <th>기본값</th>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>뷰포트 너비</td>
+    <td>device-width 또는 크기</td>
+    <td>브라우저 기본값</td>
+  </tr>  
+  <tr>
+    <td>height</td>
+    <td>뷰포트 높이</td>
+    <td>device-height 또는 크기</td>
+    <td>브라우저 기본값</td>
+  </tr>
+  <tr>
+    <td>user-scalable</td>
+    <td>확대, 축소 가능 여부</td>
+    <td>yes 또는 no <br> (yes는 1로, device-width와 <br> device-height값은 10으로 간주</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>initial-scale</td>
+    <td>초기 확대, 축소 값</td>
+    <td>1~10</td>
+    <td>1</td>
+  </tr>
+</table>
 
 ```
 /* 기본형 */
 <meta name="viewport" content="속성1=값1, 속성2=값2 .....">
 
+/* 예시 */
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+### 뷰포트 단위 
+뷰포트 개념이 등장하기 전까지는 CSS에서 크기를 지정할 때 주로 px, %의 단위를 사용했지만 이제는 다음과 같이 뷰포트를 기준으로 하는 단위를 사용할 수 있다.
+#### 뷰포트 단위 
+
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>vw(viewport width)</td>
+    <td>1vw는 뷰포트 너비의 1%와 같다.</td>
+  </tr>  
+  <tr>
+    <td>vh(viewport height)</td>
+    <td>1vh는 뷰포트 높이의 1%와 같다.</td>
+  </tr>
+  <tr>
+    <td>vmin(viewport minimum</td>
+    <td>뷰포트의 너비와 높이중 작은 값의 1%와 같다.</td>
+  </tr>
+  <tr>
+    <td>vmax(viewport maximum)</td>
+    <td>뷰포트의 너비와 높이 중에서 큰 값의 1%와 같다.</td>
+  </tr>
+</table>
 
 
 
