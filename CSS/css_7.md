@@ -385,8 +385,76 @@ and: 조건이 여러 개 연결해서 추가할 수있다.
   </tr>
 </table>
 
+#### 플렉스 항목 배치해보기
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container{
+      width: 700px;
+      display: flex;             /*플렉스 컨테이너 지정*/
+      background-color: #eee;
+      border: 1px solid;
+      margin-bottom: 30px;   
+    }
+    .box{
+      background-color: black;
+      margin: 5px;
+      padding: 5px 45px;
+      width: 80px;
+    }
+    p{
+      color: white;
+      text-align: center;
+    }
+    #op1{
+      flex-direction: row;            /*왼쪽에서 오른쪽으로*/
+    }
+    #op2{
+      flex-direction: row-reverse;    /*오른쪽에서 왼쪽으로*/
+    }
+    #op3{
+      flex-direction: column;         /*위에서 아래으로*/
+    }
+    #op4{
+      flex-direction: column-reverse; /*아래에서 위로*/
+    }
+    
+  </style>
 
 
+</head>
+<body>
+  <div class="container" id="op1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container" id="op2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container" id="op3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container" id="op4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+</body>
+</html>
+```
+### 결과
+<img src=./image/flex1.png>
 
 
 
