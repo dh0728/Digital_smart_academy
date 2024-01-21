@@ -669,14 +669,109 @@ justifly-content 속성이 주축으로 항목을 정렬한단면 aling-items �
 ### 특정 항목만 정렬 방법을 지정하는 align-self속성
 align-item속성은 교차축을 기준으로 플렉스 항목의 정렬 방법을 결정하지만 그중에서 특정 항목만 지정하고 싶다면 align-self 속성을 사용한다. 그래서 align-item 속성은 플렉스 컨테이너를 지정하는 선택자에서 사용하지만 align-self 속성은 **플렉스 항목 선택자**에서 사용한다. align-self 속성에서 사용하는 값은 align-items 속성에서 사용하는 값과 같다. 
 
+#### align-self속성 예시
+```
+...생략...
+  <style>
+    .container {
+      width:450px;
+      height:150px;
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:20px;
+      display:flex;         /* 플렉스 컨테이너 지정 */
+      align-items: center;  /* 교차축의 중앙에 배치 */
+    }                                        
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+      background-color:#222;   
+    }
+    #box1 {
+      align-self: flex-start;  /* 교차축의 시작점에 배치 */
+    }
+    #box3 {
+      align-self:stretch;       /* 교차축에 가득 차게 늘림 */
+    }
+    p {
+      color:#fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box1"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box" id="box3"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+</body>
+</html>
+```
+#### 결과값
+<img src="./image/flex6.png">
 
+### align-content 속성
+주축에서 줄 바꿈이 생겨서 플렉스 항목을 여러 줄로 표시할 때 align-content 속성을 사용하면 **교차축에서 플렉스 항목 간의 간격을 지정**할 수 있다. 
 
+#### align-content의 속성값
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>flex-start</td>
+    <td>교차축의 시작점에 맞춰 배치한다.</td>
+  </tr>  
+  <tr>
+    <td>flex-end</td>
+    <td>교차축의 끝점에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>center</td>
+    <td>교차축의 중앙에 맞춰 배치한다.</td>
+  </tr>
+  <tr>
+    <td>space-between</td>
+    <td>첫 번째 항목과 끝 항목을 교차축의 시작점과 끝점에 맞추고 나머지 항목은 그 사이에 같은 간격으로 배치한다..</td>
+  </tr>
+  <tr>
+    <td>space-around</td>
+    <td>모든 항목을 교차축에 같은 간격으로 배치한다.</td>
+  </tr>
+  <tr>
+    <td>stretch</td>
+    <td>플렉스 항목을 늘려서 교차축에 가득차게 배치한다.</td>
+  </tr>
+</table>
 
+#### align-content 속성 예시
+```
 
+...생략...
+#opt1{
+  align-content: flex-start;    /* 교차축 시작점 기준 */
+}
+#opt2{
+  align-content: flex-end;       /* 교차축 끝점 기준 */
+}
+#opt3{
+  align-content: center;         /* 교차축 중앙 기준 */
+}
+#opt4{
+  align-content: space-between;     /* 시작점과 끝점 배치 후 중간 항목은 같은 간격으로 배치 */  }    
+#opt5{
+  align-content: space-around;       /* 전체 항목을 같은 간격으로 배치 */  
+}
+#opt6{
+  align-content: stretch;             /* 항목을 늘려 교차축에 가득 차게 배치 */
+}                            
 
-
-
-
+```
+#### 결과값
+<img src="./image/flex7.png">
 
 
 
