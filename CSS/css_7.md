@@ -778,7 +778,7 @@ align-item속성은 교차축을 기준으로 플렉스 항목의 정렬 방법�
 
 ### CSS 그리드 레이아웃에서 사용하는 용어
 플렉스 박스 레이아웃에선 플렉스 항목을 배치할 때 가로나 세로 중에서 하나를 주축으로 정하고 배치했다. 반면 **CSS 그리드 레이아웃**에서는 그리드 항목을 배치할 때 가로와 세로를 모두 사용한다. 그래서 플렉스 항목은 1차원이고 **CSS 그리드 레이아웃**은 **2차원**이라고 한다. <br>
-CSS 그리드 레이아웃은 가로 방향을 가르키는 **줄(row)** 와 세로 방향을 가르키는 **칼럼(column)** 으로 웹 화면을 구성한다. 그리고 칼럼과 칼럼 사이, 줄과 줄 사이의 간격을 지정해서 원하는 형태의 레이아웃을 만든다. 
+CSS 그리드 레이아웃은 가로 방향을 가르키는 **줄(row)** 와 세로 방향을 가르키는 **칼럼(column)** 으로 웹 화면을 구성한다. 그리고 칼럼과 칼럼 사이, 줄과 줄 사이의 간격을 지정해서 원하는 형태의 레이아웃을 만든다. 그림을 보면 항목 1, 4, 7이 하나의 column이고 항목 1, 2, 3이 하나의 줄(row)이다.
 
 <img src="./image/cssgrid.png">
 
@@ -801,14 +801,44 @@ CSS 그리드 레이아웃은 가로 방향을 가르키는 **줄(row)** 와 세
 </table>
 
 ### 칼럼과 줄을 지정하는 grid-template-columns, grid-template-rows 속성
+그리드 컨테이너 안에 항목을 배치할 때 칼럼과 줄의 크기와 개수를 지정하려면 grid-template-colums 속성과 grid-template-columns을 각각 사용한다. **grid-template-columns 속성**은 그리드 컨테이너 안의 항목을 몇 개의 칼럼으로 배치할지, 각 칼럼의 너비를 얼마로 할지 지정한다. 
+
+#### grid-template-columns, grid-template-rows 속성 예시
+```
+...생략...
+
+<style>
+  .wrapper{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px;
+  }
+  .items{
+    padding: 10px;
+    background-color: #bbb;
+  }
+  .items:nth-child(odd){
+    background-color: #eee;
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="items">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores                           praesentium repellat itaque sit, illo hic voluptatum ea nobis deleniti                         cupiditate quia similique vel officiis totam maiores? Est earum                                perspiciatis voluptatibus.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nam                          unde quasi minima quibusdam asperiores.</div>
+    <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque                               corrupti voluptatibus voluptate vero fuga expedita cupiditate omnis                            quod cumque voluptatum?</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, magnam.        </div>
+    <div class="items">Lorem ipsum dolor sit amet.</div>
+  </div>
+</body>
+</html>
+
+```
+#### 결과값
+<img src="./image/grid1.png">
 
 
-
-
-
-
-
-
+### 상대적인 크기를 지정하는 fr단위 
 
 
 
