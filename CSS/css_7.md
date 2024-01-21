@@ -453,10 +453,103 @@ and: 조건이 여러 개 연결해서 추가할 수있다.
 </body>
 </html>
 ```
-### 결과
+#### 결과
 <img src=./image/flex1.png>
 
+### 플렉스 항목의 줄을 바꾸는 flex-wrap 속성
+flex-wrap 속성은 플렉스 컨테이너 너비 보다 많은 플렉스 항목이 있을 경우 줄을 바꿀지 여부를 지정한다. 속성값으로 wrap이나 wrap-reverse로 지정한 후 웹 브라우저 화면의 너비를 줄이거나 늘이면 컨테이너 너비에 따라 여러 줄로 표시됨을 볼 수 있다.
+#### flex-wrap의 속성값
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>nowrap</td>
+    <td>플렉스 항목을 한 줄에 표시한다. 기본값</td>
+  </tr>  
+  <tr>
+    <td>wrap</td>
+    <td>플렉스 항목을 여러 줄에 표시한다.</td>
+  </tr>
+  <tr>
+    <td>wrap-reverse</td>
+    <td>플렉스 항목을 여러 줄로 표시하되, 시작점과 끝점을 바뀐다.</td>
+  </tr>
+</table>
 
+#### flex-wrap으로 줄바꾸기
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container{
+
+      display: flex;             /*플렉스 컨테이너 지정*/
+      background-color: #eee;
+      border: 1px solid;
+      margin-bottom: 30px;   
+    }
+    .box{
+      background-color: black;
+      margin: 5px;
+      padding: 5px 45px;
+      width: 80px;
+    }
+    p{
+      color: white;
+      text-align: center;
+    }
+    #op1{
+      flex-wrap: nowrap;
+    }
+    #op2{
+      flex-wrap: wrap;
+    }
+    #op3{
+      flex-wrap: wrap-reverse ;
+    }
+    
+  </style>
+
+
+</head>
+<body>
+  <div class="container" id="op1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>
+  </div>
+  <div class="container" id="op2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>
+  </div>
+  <div class="container" id="op3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>
+  </div>
+
+</body>
+</html>
+```
+#### 결과값
+<img src="./image/flex2.png">
 
 
 
