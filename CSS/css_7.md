@@ -178,6 +178,113 @@ and: 조건이 여러 개 연결해서 추가할 수있다.
   </tr>
 </table>
 
+### 단말기의 가로 너비와 세로 높이 속성
+단말기(device)의 너비와 높이는 단말기 브라우저 창의 너비와 높이를 말한다. 주의할 점은 대부분의 단말기 해상도와 실제 브라우저의 너비가 다르다는 것이다. 예를 들어 아이폰 단말기 자체의 해상도와 아이폰의 웹 브라우저인 사파리의 너비는 다르다.
+
+#### 단말기의 가로 세로 속성
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>device-width, device-height</td>
+    <td>단말기의 가로 너비, 세로 높이를 지정한다.</td>
+  </tr>  
+  <tr>
+    <td>min-device-width, min-device-height</td>
+    <td>단말기의 최소 너비, 최소 높이를 지정한다.</td>
+  </tr>
+  <tr>
+    <td>max-device-width, max-device-height</td>
+    <td>단말기의 최대 너비, 최대 높이를 지정한다.</td>
+  </tr>
+</table>
+
+### 화면 회전 속성
+스마트폰이나 태블릿에서 화면을 세로나 가로로 돌려서 보는 것을 미디어 쿼리에 **orientation** 속성을 사용하면 기기의 방향을 확인할 수 있고, 그에 따라서 웹 사이트의 레이아웃을 바꿀 수 있다. orientation 속성값으로는 portrait와 landscape가 있다. **가로 모드는 landscape**이고, **세로 모드는 portrait**이고 기본값은 landscape이다.
+
+#### 화면 회전 속성
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>orientation: portrait</td>
+    <td>단말기의 세로 모드를 지정한다.</td>
+  </tr>  
+  <tr>
+    <td>orientation: landscape</td>
+    <td>단말기의 가로 모드를 지정한다.</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
