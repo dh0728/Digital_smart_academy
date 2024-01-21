@@ -71,7 +71,7 @@
     <td>1vh는 뷰포트 높이의 1%와 같다.</td>
   </tr>
   <tr>
-    <td>vmin(viewport minimum</td>
+    <td>vmin(viewport minimum)</td>
     <td>뷰포트의 너비와 높이중 작은 값의 1%와 같다.</td>
   </tr>
   <tr>
@@ -103,7 +103,99 @@ and: 조건이 여러 개 연결해서 추가할 수있다.
 }
 /* 미디어 유형이 screen이면서 최소 너비가 768px이고 최대 너비는 1439px 일 경우 */
 ```
-   
+
+#### @media 속성의 이미지 유형
+
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>all</td>
+    <td>모든 미디어 유형에서 사용할 CSS를 정의한다.</td>
+  </tr>  
+  <tr>
+    <td>print</td>
+    <td>인쇄 장치에서 사용할 CSS를 정의한다.</td>
+  </tr>
+  <tr>
+    <td>screen</td>
+    <td>컴퓨터 스크린에서 사용할 CSS를 정의한다. 스마트폰의 스크린도 포함한다.</td>
+  </tr>
+  <tr>
+    <td>tv</td>
+    <td>음성과 영상이 동시에 출력되는 TV에서 사용할 CSS를 정의한다.</td>
+  </tr>
+  <tr>
+    <td>aural</td>
+    <td>음성 합성 장치(주로 화면을 읽어 소리를 출력해 주는 장치)에서 사용할 CSS를 정의한다.</td>
+  </tr>
+  <tr>
+    <td>braille</td>
+    <td>점자 표시 장치에서 사용할 CSS를 적용한다.</td>
+  </tr>
+  <tr>
+    <td>handheld</td>
+    <td>패드(pad)처럼 손에 들고 다니는 장치를 위한 CSS를 정의한다.</td>
+  </tr>
+  <tr>
+    <td>projection</td>
+    <td>프로젝터를 위한 CSS를 정의한다.</td>
+  </tr>
+  <tr>
+    <td>tty</td>
+    <td>디스플레이 기능이 제한된 장치에 맞는 CSS를 정의한다. 이런 장치에서는 pixel단위를 사용할 수 없다</td>
+  </tr>
+  <tr>
+    <td>embossed</td>
+    <td>점자 프린터에서 사용할 CSS를 정의한다.</td>
+  </tr>
+</table>
+
+### 웹 문서의 가로 너비와 세로 높이 속성
+실제 웹 문서 내용이 화면에 나타나는 영역을 뷰포트라고 하는데 뷰포트의 너비와 높이를 미디어의 쿼리의 조건으로 사용할 수 있다. 이때 높잇값은 미디어에 따라 달라진다.
+**screen이 아닌 미디어에서는 스크롤을 포함한 전체 문서를 height으로 지정해야 하고 print에서는 한 페이지 높이를 기준으로 한다.**
+
+
+#### 웹 문서의 가로 세로 속성
+<table>
+  <tr>
+    <th>종류</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>width, height</td>
+    <td>웹 페이지의 가로 너비, 세로 높이를 지정한다.</td>
+  </tr>  
+  <tr>
+    <td>min-width, min-height</td>
+    <td>웹 페이지의 최소 너비, 최소 높이를 지정한다.</td>
+  </tr>
+  <tr>
+    <td>max-width, max-height</td>
+    <td>웹 페이지의 최대 너비, 최대 높이를 지정한다.</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
