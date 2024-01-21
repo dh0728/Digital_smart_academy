@@ -1061,7 +1061,7 @@ grid-template-column: 1fr 1fr 1fr; -> gird-temlplate-column: repeat(3, 1fr)
 </html>
 ```
 #### 결과값
-<img src="./image/grid6.png">
+<img src="./image/grid5.png">
 
 
 
