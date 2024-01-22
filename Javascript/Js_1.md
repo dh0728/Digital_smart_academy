@@ -58,15 +58,77 @@ Ecma Intermational의 의 프로토타입 기반의 프로그래밍 언어로, �
 웹 브라우저에는 자바스크립트 소스를 읽고 처리하는 해석기(JavaScript interpreter)가 있다. 따라서 자바 스크립트 소스는 웹 문서에서 script태그를 이용해 작성할 수 있다. 또는 자바스크립트 소스만 별도 스크립트 파일로 작성한 후 웹 문서와 연결해서 사용할 수 있다. 
 
 ### 인라인 스크립트 
-HTML 태그 안에 직접 작성하는 자바스크립트
+HTML 태그 안에 직접 작성하는 방법이다. 팝업 창을 열고 닫거나, 알림 메세지를 표시할 때 처럼 간단한 명령을 처리할 경우 인라인 스크립트를 자주 사용한다.
+#### 예시
+```
+<body>
+  <botton onclick = "alert('알림 메시지가 표시된다.')">클릭!</botton>
+</body>
+```
 
+### 내부 스크립트
+웹 문서에서 script 태그 사이에 실행할 자바스크립트 소스코드를 작성한다. script 태그는 웹 문서에서 모든 곳에 위치할 수 있고 삽입된 위치에서 바로 스크립트가 실행된다. 한 문서 안에 여러 개의 script태그를 사용할 수 있다. 내부 스크립트는 주로 body태그 앞에 사용한다.
 
+#### 예시
+```
+<body>
+  <p>새로 고침해 보세요</p>
+  <script>
+    function random(number) {
+      return Math.floor(Math.random() * number);
+    }
 
+    function bgChange() {
+      const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')＇;
+      document.body.style.backgroundColor = rndCol;
+    }
 
+    bgChange();
+  </script>
+</body>
+```
+### 인라인 스크립트와 내부 스크립트의 단점
+같은 자바스크립트 소스를 여러 웹 문서에 사용해야 할 경우, 필요한 문서마다 똑같은 소스를 반복해서 삽입해야 한다. 만일 여러 페이지에 삽입한 자바스크립트 소스를 수정해야 한다면 소스가 포함된 모든 문서를 하나씩 수정해야 한다. 때문에 외부 스크립트 파일로 저장해 링크하는 방법을 많이 사용하고 마크업과 구별되기 때문에 스크립트 소스를 관리하기 쉽다. 
 
+### 외부 스크립트 
+외부 자바스크립트 파일(.js)파일에 소스만 작성하고 **script태그의 src 속성**을 이용해 파일을 연결한다. 
 
+### 웹 브라우저에서 스크립트를 해석하는 과정
 
-
+#### html 문서
+```
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  ... 
+  <link rel="stylesheet" href=“css/main.css">
+  <style>...</style>
+</head>
+<body>
+  <p>새로 고침해 보세요</p>
+  
+  <script src=“js/changeBg.js"></script>
+</body>
+</html> 
+```
+#### js파일
+```
+function random(number) {
+  ...
+}
+ 
+function bgChange() {
+  ...
+}
+ 
+bgChange(); 
+```
+**1.** 웹 브라우저 1행에 있는 **!DOCTYPE html** 을 보고 이 문서가 웹 문서 라는 것을 알게 된다. 그 후 HTML 표준에 맞게 읽기 시작한다. <br>
+**2.** 웹 문서에서 HTML 태그의 순서와 포함 관계를 확인한다. **head태그 사이, body태그 사이**에 각각 어떤 태그가 있는지 확인한다. 또한 **태그 간의 관계를 분석**한다. <br>
+**3.** 태그 분석이 끝나면 따로 분류해 두었던 외부 스타일 시트나 문서 안의 스타일 정보를 분석하면서 화면에 표시한다. <br>
+**4.** **script 태그**를 만나면 자바스크립트 해석기에서 스크립트 소스를 넘긴다.  
+**5.** 자바스크립트를 실행해 그 결과를 화면에 표시한다.
 
 
 
