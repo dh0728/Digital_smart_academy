@@ -110,7 +110,67 @@ document.write (birthYear + "년에 태어난 사람의 나이는" + age + "세�
 ```
 
 ### 비교 연산자
-**비교 연산자(comparison operators)** 는 피연산자 2개의 값을 비교해서 true나 false로 결괏값을 반환한다. 
+**비교 연산자(comparison operators)** 는 피연산자 2개의 값을 비교해서 true나 false로 결괏값을 반환한다. 주로 조건을 확인할 때 자주 사용하는 연산자이다.
+
+<table>
+  <tr>
+    <th rowspan="2">종류</th>
+    <th rowspan="2">설명</th>
+    <th colspan="2">예시</th>
+  </tr>
+  <tr>
+    <th>조건식</th>
+    <th>결과</th>
+  </tr>
+  <tr>
+    <td>==</td>
+    <td>피연산자가 서로 같으면 true이다.</td>
+    <td>3 == "3"</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>===</td>
+    <td>피연산자도 같고 자료형도 같으면 true이다.</td>
+    <td>a === "3"</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>!=</td>
+    <td>피연산자가 서로 같지 않으면 true이다.</td>
+    <td>3 !="3"</td>
+    <td> false</td>
+  </tr>
+  <tr>
+    <td>!==</td>
+    <td>피연산자가 같지 않거나 자료형이 같지 않으면 true이다.</td>
+    <td>3 !=="3"</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td> < </td>
+    <td>왼쪽 피연산자가 오른쪽 피연산자보다 작으면 true이다.</td>
+    <td> 3 < 4 </td>
+    <td> true </td>
+  </tr>
+  <tr>
+    <td> <= </td>
+    <td>왼쪽 피연산자가 오른쪽 피연산자보다 작거나 같으면 true이다.</td>
+    <td> 3 =< 4 </td>
+    <td> true</td>
+  </tr>
+  <tr>
+    <td> > </td>
+    <td> 왼쪽 피연산자가 오른쪽 피연산자보다 크면 true이다.</td>
+    <td> 3 > 4</td>
+    <td> false</td>
+  </tr>
+  <tr>
+    <td>>=</td>
+    <td>왼쪽 피연산자가 오른쪽 피연산자보다 크거나 작으면 true이다.</td>
+    <td>3 >=4</td>
+    <td> false </td>
+  </tr>
+</table>
 
 
 
