@@ -355,12 +355,64 @@ userInput에 10을 곱하면 자동으로 숫자형으로 변환되면서 계산
   </tr>
 </table>
 
+### 숫자형으로 변환하기-parseInt(), parseFloat()
+**partseInt()함수:** 괄호 안의 값을 정수로 변환
+**partseFloat()함수:** 괄호 안의 값을 실수로 변환
 
+### 문자열로 변환하기-toString() 함수
+null 데이터형과 undefined 데이터형을 제외한 데이터형을 문자열 데이터로 변환한다. 원래값 뒤에 마침표를 붙이고 함수를 작성한다. 숫자를 문자열로 변환할 때는 basis 옵션을 사용해 숫자가 10진수인지, 2진수인지 같이 지정
+```
+값.toString()
+값.toString(basis)
+```
+```
+num=10            //원랫값 숫자형
+isEmpty =true     //원랫값 논리형
 
+num.toString()    //'10', 10진수 문자열
+num.toString(2)   //'1010', 2진수 문자열
+isEmpty.toString()//'true'
+```
 
+### 문자열로 변환하기- String()함수
+null 데이터형과 undefined 데이터형을 포함해서 문자열 데이터로 변환한다. **String()함수**의 괄호 안에 값을 넣어서 변환한다. null이면 'null'로 undefined이면 'undefined'로 변환 그 외에는 toString()함수와 같다.
+```
+String(값)
 
+isFull=false       //원랫값 논리값
+initValue=null     //원래값 null형
+String(isFull)     //'false'
+String(initValue)  //'null'
+```
 
-
+### 논리형으로 변환하기- Boolean()함수
+다른 유형의 데이터를 논리형 데이터로 변환한다. 함수의 괄호 안에 원랫값을 넣는다.
+```
+Boolean(값)
+```
+#### 논리형으로 변환할 때의 규칙
+<table>
+    <tr>
+      <td></td>
+      <td>true 값이 되는 데이터</td>
+      <td>false 값이 되는 데이터</td>
+    </tr>
+    <tr>
+      <td>숫자형</td>
+      <td>0이 아닌 값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>문자열</td>
+      <td>빈 문자열이 아닌 모든 문자열</td>
+      <td>빈 문자열</td>
+    </tr>
+    <tr>
+      <td>undefined</td>
+      <td>`</td>
+      <td>undefined</td>
+    </tr>
+</table>
 
 
 
