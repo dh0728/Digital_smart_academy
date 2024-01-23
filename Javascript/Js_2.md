@@ -65,9 +65,59 @@ prompt(내용) 또는 prompt(내용, 기본값)
 **3.** 변수 선언과 값 할유
 값이 바뀌지 않는게 
 
+### var, let, const
+ECMAScript 2015(ES6)이전까지는 var을 사용해 변수를 선언으나 자바스크립트 역할이 커지면서 var로는 부족해서 let과 const를 사용하게 되었다.
+<table>
+  <tr>
+    <th>키워드</th>
+    <th>선언하지 않고 사용하면?</th>
+    <th>재선언</th>
+    <th>재할당</th>
+  </tr>
+  <tr>
+    <td>var</td>
+    <td>오류 없음</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>let</td>
+    <td>오류 발생</td>
+    <td>X</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>const</td>
+    <td>오류 발생</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>  
+</table>
 
+## 2.3 자바스크립트의 자료형
 
+### 자료형(data type)이란
+1.프로그램에서 처리하는 자료의 형태 <br>
+2.자료형, 자료 유형, 데이터 타입 등으로 부른다 <br>
+3.자바스크립트 자료형은 크기 '원시형'과 '겍체'로 나눈다. <br>
+-원시형(primitive type):하나의 값만 가지고 있는 자료형
+-객체(object):원시형 외의 모든 자료
 
+<table>
+  <tr>
+    <th colspan="2">자료형</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <th rowspan="5">기본형</th>
+    <td>number(숫자)</td>
+    <td>따음표 없이 표기할 숫자를 나타낸다.</td>
+  </tr>
+  <tr>
+    <td>string(문자열)</td>
+    <td>작은따음표(')나 큰따음표(")로 묶어 나타낸다.</td>
+  </tr>
+</table>
 
 
 
