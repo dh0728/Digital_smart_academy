@@ -213,6 +213,68 @@ Javascript < JavaScript //false( 소문자 > 대문자)
 ### 연산자 우선순위
 **단항연산자->산술연산자->비교연산자->논리연산자->할당연산**
 
+<table>
+  <tr>
+    <th></th>
+    <th>1st</th>
+    <th>2nd</th>
+    <th>3rd</th>
+    <th>4th</th>
+    <th>5th</th>
+    <th>6th</th>
+    <th>7th</th>
+  </tr>
+  <tr>
+    <th>단항연산자</th>
+    <td>!</td>
+    <td>++</td>
+    <td>--</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>산술연산자</th>
+    <td>*</td>
+    <td>/</td>
+    <td>%</td>
+    <td>+</td>
+    <td>-</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>비교연산자</th>
+    <td><</td>
+    <td><=</td>
+    <td>></td>
+    <td>>=</td>
+    <td>==</td>
+    <td>!=</td>
+    <td>===</td>
+  </tr>
+  <tr>
+    <th>논리연산자</th>
+    <td>&&</td>
+    <td>||</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>할당연산자</th>
+    <td>=</td>
+    <td>+=</td>
+    <td>-=</td>
+    <td>*=</td>
+    <td>/=</td>
+    <td>%=</td>
+    <td></td>
+  </tr>
+</table>
 
 
 
