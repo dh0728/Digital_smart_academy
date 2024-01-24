@@ -185,8 +185,33 @@ Javascript < JavaScript //false( 소문자 > 대문자)
 ```
 
 ### 논리 연산자
+**불리언(boolean)** 연산자라고도 하며 true, false를 처리하는 연산자이다. 주로 프로그램에서 조건을 처리할 때 사용하는 연산자이다.
 
+<table>
+    <tr>
+      <th>종류</th>
+      <th>기호</th>
+      <th>설명</th>
+    </tr>
+    <tr>
+      <td>OR연산자</td>
+      <td>||</td>
+      <td>피연산자 중 하나만 true여도 true가 된다.</td>
+    </tr>
+    <tr>
+      <td>AND연산자</td>
+      <td>&&</td>
+      <td>피연산자 모두 true일 경우에만 true가 된다.</td>
+    </tr>
+    <tr>
+      <td>NOT연산자</td>
+      <td>!</td>
+      <td>피연산자의 반댓값을 지정한다.</td>
+    </tr>
+  </table>
 
+### 연산자 우선순위
+**단항연산자->산술연산자->비교연산자->논리연산자->할당연산**
 
 
 
