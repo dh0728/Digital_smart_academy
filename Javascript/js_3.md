@@ -487,15 +487,70 @@ for (let student of students){
 ```
 ### for문 중첩하기
 for문 안에 또다른 for 문을 사용하는 것을 "중첩한다"고 한다.
+```
+for(let k=0;k<5; k++){
+  for(var i=0; i<30;i++){
+    document.write('*')
+  }
+  document.write('<br>');
+}
+```
 
+### while 문,do ...while 문
+while문과 do... while문은 초기값이나 반복 횟수 없이 조건만 주어졌을 때 사용한다.
 
+#### while
+1.조건이 참(true)인 동안 문장 반복한다. <br>
+2.조건부터 체크한 후 true일 경우에만 반복한다. <br>
+3.조건이 false라면 한 번도 실행하지 않는다. 
+```
+while(조건){
+  실행할 명령
+}
+//예시
+let star= paresInt(prompt("별의개수:"));
 
+while(stars >0) {
+  document.write('*');
+  star--;
+}
+// 별의 갯수를 5개로 별 5개 찍힘
+// 별의 갯수를 0개로 했을 때 0개 찍힘
+```
+#### do...while
+1.일단 문장을 한번 실행한다. <br>
+2.조건이 참(true)인 동안 문장을 반복한다.<br>
+3.조건이 false라도 최소한 한번은 실행한다. 
+```
+do {
+  실행할 명령
+}while(조건)
 
+let star= paresInt(prompt("별의개수:"));
 
+do{
+  document.write('*');
+  star--;
+}while(star>0)
+//별의 갯수를 5로 했을 때 5개롤 찍힘
+//별의 갯수를 0개로 했을 때 1개로 찍
+```
+### break문
+반복문은 주어진 조건에 따라 문장을 반복하기 때문에 종료 조건이 돼야 반복이 끝난다. 종료 조건이 되기 전에 반복문을 빠져나와야 한다면 **break문 사용** <br>
+switch문에서도 case에 맞는 값이 있을 경우 명령을 실행한 후 break문을 사용해 switch문을 빠져나온다.
 
+### continue문
+특정 조건이 됐을 때 실행하던 반복 문장을 더 이상 실행하지 않고 반복문의 맨 앞으로 되돌아간다. **반복 과정을 한 차례 건너 뛰는 것**
 
-
-
+```
+// 예시 짝수만 표시
+for(let i; i<=10; i++){
+  if(i%2===1){
+    continue;
+  }
+  document.write(`${i}<br>`);
+}
+```
 
 
 
