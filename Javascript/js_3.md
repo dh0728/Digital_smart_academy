@@ -339,13 +339,123 @@ if (userNumber !=null) {
 ```
 
 ### switch문
-처리할 명령이 많을 경우, switch문을 활용하면 편하다.
+처리할 명령이 많을 경우, switch문을 활용하면 편하다. <br>
+1.switch 키워드 오른쪽에 조건을 확인할 변수를 지정한다. <br>
+2.조건값은 case문 다음에 지정한다. <br>
+3.조건값에 맞을 떄 실행할 명령은 콜론(;) 다음에 나열한다. (둘 이상의 명령이라면 {}을 사용) <br>
+4.조건에 맞을 명령을 실행한 후에는 break문을 써서 switch문을 완전히 빠져나온다. <br>
+5.case의 값과 일치하는게 없을 경우 default 문을 실한다. **(default문에는 break문이 없다)**
+```
+switch(변수)
+{
+  case 값1 : 문장
+    break;
+  case 값2 : 문장
+    break;
+....
+  default: 문장
+}
+``` 
+#### switch 문 예 
+```
+var session=prompt("관심 세션을 선택하세요. 1-마케팅, 2-개발, 3-디자인")
 
+switch(session){
+  case "1" : document.write("<p>마케팅 세션 <strong>201호</strong>에서")
+    break;
+  case "2" : document.write("<p>개발 세션 <strong>202호</strong>에서")
+    break;
+  case "1" : document.write("<p>디자인 세션 <strong>203호</strong>에서")
+    break;
+  default : alert("잘못입력했습니다");
+}
+```
+### 두 가지 이상의 조건 체크하기
+두 개 이상의 조건을 체크해야 할 경우에는 논리 연산자를 사용해 조건식을 만들어야 한다. <br>
+**OR 연산자(||) :** 두 개의 피연산자 중 하나라도 true가 있으면 결과값은 true가 된다. <br>
+**AND 연산자(&&) :** 두 개의 피연산자 중 false가 하나라도 있으면 결과값은 false가 된다.<br>
+**NOT 연산자(!) :** 피연산자의 값과 정반대의 값 <br>
 
+<table>
+    <tr>
+      <th>op1</th>
+      <th>op2</th>
+      <th>op || op2</th>
+      <th>op1 && op2</th>
+      <th>!op1</th>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </table>
 
+#### 단축 평가값 활용하기
+조건식은 왼쪽에서 오른쪽으로 진행하면서 처리한다. 첫 번째 조건만 보고도 true인지 결정할 수 있다면 좀 더 빠르게 조건식을 처리할 수 있다. 두 가지 이상의 조건을 함께 체크하는 조건식을 만들 때에는 첫 번째 조건을 보고 빠르게 작성하는 것이 좋다. 
 
+## 3.3 반복문 
+반복문은 같은 동잘을 여러 번 실행하기 위해 사용하는 문이다. 반복문을 사용하면 불필요하게 여러 명령들을 늘어놓지 않아도 명령을 반복 실핼 할 수 있다. 그만큼 소스도 깔끔해지고 소스가 짧아지는 만큼 실행이 빨라진다. 
 
+### for문
+자바스크립트에서 가장 많이 사용하는 반복문이다. 조건값이 일정하게 커지면서 명령을 반복 실행할 때 편리하다. for문에서는 몇 번 반복했는지 기록하기 위해 **카운터**를 사용하고 for문의 첫 번째 항에서 카운터 변수를 지정한다. 
+```
+for(초깃값; 조건; 증가식){...}
 
+//예시 1에서 10까지 순서대로 콘솔 창에 표시
+for( let i = 1; i <= 10 ;i++){
+  console.log(i+ '\n');
+}
+```
+**초깃값 :** 몇 번 반 복할지 지정하는 카운터 변수를 선언하고 초기화한다. 초기값은 0이나 1부터 시작한다. <br>
+**조건 :** 문장을 반복하기 위해 체크할 조건 부분. 이 조건을 만족해야 for문에서 있는 명령을 반복할 수 있다. 
+**증가식 :** 문장을 실행한 후 카운터 변수를 증가시키는 부분. 보통 카운터값을 하나 더 증가시킨다.
+
+### forEach 문
+배열의 크기(length)가 정해져 있지 않을 경우에 사용한다.
+**콜백 함수 :** 다른 함수 안에 사용할 수 있는 함수를 말한다.
+```
+배열명.forEach(콜백 함수){...}
+
+```
+#### 예시
+```
+const students=["Park","Kim","Lee","Kang"]
+
+student.forEach(function(student){
+  document.write('${student}.')
+});
+
+//ES6의 화살표 함수를 사용하면 더 간단한 표현 가능
+const students=["Park","Kim","Lee","Kang"]
+
+students.forEach(student => document.write(`${student}.))`
+```
+
+###
 
 
 
