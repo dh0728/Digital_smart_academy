@@ -277,7 +277,88 @@ Javascript < JavaScript //false( 소문자 > 대문자)
 </table>
 
 
-3
+## 3.2 조건문
+
+### if문 
+괄호 안의 조건이 true이면 {} 사이의 명령을 처리하고, false이면 {}안의 명령을 무시하고 다음 명령을 처리한다. 
+```
+if(조건){
+  조건이 true일 때 실행할 명령
+}
+```
+
+### if ...else 문
+if 문은 결과값이 true일 때만 실행하므로 true가 아닐 때 명령을 따로 수행할 수 없다. if~else문은 if 조건의 결과값이 true가 아닐 때 실행할 명령을 else 문 다음에 추가한다.
+```
+if(조건){
+  조건 결과값이 true일 때 실행할 명령
+}
+else{
+  조건 결과값이 false일 때 실행할 명
+}
+```
+#### truthy 값, falsy 값
+프롬포트 창에서 값을 입력하지 않고 [확인]을 누른 경우도 체크하려면 값이 입력되었는지를 체크할 때 truthy값을 사용할 수 있다.
+```
+let input=prompt("이름을 입력하세요")
+if(input){
+  alert(`${input}님, 어서오세요.`);
+}
+else{
+  alert('이름을 입력하지 않았습니다.')
+}
+```
+
+
+### 조건 연산자
+조건이 하나이고 실행할 명령도 하나일 때 조건문을 간단하게 처리하는 연산자
+```
+(조건)? 명령1 : 명령2
+```
+```
+//바꾸기전
+if(num1< num2) {
+  small=num1;
+}
+else {
+  small=num2;
+}
+
+//바꾼후
+small=(num1<num2)?num1:num2;
+```
+#### 연습) 짝수, 홀수 구분하는 프로그램
+사용자가 취소 버튼을 클릭했을 경우를 생각하며 만들자
+```
+let userNumber=prompt("숫자를 입력하세요");
+
+if (userNumber !=null) {
+  userNumber=parseInt(userNumber);
+  (userNumber % 2 === 0)? alert ('${userNumber}: 짝수): alert('${userNumber} : 홀수);
+}
+```
+
+### switch문
+처리할 명령이 많을 경우, switch문을 활용하면 편하다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
