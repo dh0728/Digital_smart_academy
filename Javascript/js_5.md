@@ -52,14 +52,47 @@ document.getElementsTagName("태그명")
 id, class, 태그 이름을 사용해서 접근하는 것은 같지만 querySelector()을 사용하면 둘 이상의 선택자를 조합해서 접근할 수 있다.
 
 ### 웹 요소 내용 가져오기 및 수정하기
-접귾나 요소의 텍스트 내용을 가져오거나 지정할 때는 innerText, innerHTMl, textContent 프로퍼티 사용한다.
+접귾나 요소의 텍스트 내용을 가져오거나 지정할 때는 innerText, innerHTMl, textContent 프로퍼티 사용한다. 화면에서 감춘 요소에서도 내용을 가져올 수 있고, 소스에 공백이 여러 개일 경우 그 공백도 모두 가져온다.
 
 **innerText :** 순수 텍스트를 가져오거나, 해당 요소에 텍스트 지정 <br>
 **innerHTML :** 태그와 함께 텍스트를 가져오거나, 해당 요소에 태그와 함께 텍스트 지정<br>
 **textContent :** 텍스트를 가져오되, 화면에 보이는대로가 아니라 소스에 있는대로 가져온다.
 
+```
+요소.innerText 
+요소.innerHTML 
+요소.text.Content 
 
+요소.innerText = "내용"
+요소.innerHTML = "내용"
+요소.text.Content = "내용"
+```
 
+#### 클릭으로 텍스트 내용 또는 이미지 바꾸는 예시
+```
+// html
+<h1 id="title">My Profile</h1>
+  <div id="profile">
+    <img src="images/pf.png" alt="도레미">
+    <div id="desc">
+      <p class="user">이름 : 도레미</p>
+      <p class="user">주소 : somewhere</p>
+      <p class="user">연락처 : 1234-5678</p>
+    </div>
+  </div>
+
+// js파일
+const title = document.querySelector("#title")
+
+title.onclick=function() {
+  title.innerText="프로필";
+}
+
+// 화살표 함수 사용시
+const title =document.querySelector("#title")
+
+title.onclick= () => title.innerText="프로필";
+```
 
 
 
