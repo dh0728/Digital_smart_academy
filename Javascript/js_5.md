@@ -160,6 +160,13 @@ title.onclick = () => {
 }
 ```
 
+### toggle() - 특정 스타일 토글
+특정 클래스를 추가하거나 삭제하기를 반복할 경우에는 classList의 toggle() 함수가 더 편하다.
+
+```
+요소.classList.toggle(클래스명)
+```
+
 
 
 
