@@ -112,12 +112,53 @@ title.onclick = () => {
 ### classList 프로퍼티
 두 개 이상의 class 스타일이 적용되었을 경우 class 스타일 정보를 담아두는 프로퍼티이다. classList를 사용해서 적용 중인 class 스타일을 제거할 수도 있고 새로운  스타일을 추가할 수 있다.
 
+```
+document.querySelector("#desc p").classList 
+```
 
+### 클래스 스타일 추가 및 삭제하기
+새로운 클래스 스타일을 추가하거나(이 경우, 클래스 스타일이 만들어져 있어야 함) 기존에 적용 중인 클래스 스타일을 제거할 수 있다.
+```
+요소.classList.add(클래스명) 
+요소.classList.remove(클래스명) 
+```
 
+#### add() 클래스 스타일 추가 예시
+```
+//css
+h1 {
+  font-size:2rem; 
+  margin-bottom:20px ;
+}
+.clicked {
+  background-color:yellow;
+}
 
+// js
+const title = document.querySelector("#title");
 
+title.onclick = () => {
+  title.classList.add("clicked");
+}
+```
 
+### contain()-특정 클래스 스타일이 있는지
+특정 클래스 스타일이 있는지 체크해주는 함수이다. 이 함수를 사용해 클래스 추가 및 삭제를 연속적으로 실행할 수 있다.
+```
+요소.classList.contains(클래스명) 
+```
+#### contain() 예시
+```
+const title = document.querySelector("#title");
 
+title.onclick = () => {
+  if(!title.classList.contains("clicked")){
+    title.classList.add("clicked");              // .clicked가 없으면 추가
+  } else {
+    title.classList.remove("clicked");           // .clicked가 있으면 삭
+  }
+}
+```
 
 
 
