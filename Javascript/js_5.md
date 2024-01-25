@@ -236,7 +236,55 @@ document.order.product.value //order: form의 name값, product: 상품 필드의
 ……
 ```
 
-###
+### 폼 배열을 사용해 접근하기
+폼 요소에 id나 class 속성뿐만 아니라 name 속성도 없을 시 사용한다. DOM에서는 웹 문서 안에 있는 모든 요소를 배열 형태로 저장한다. <br>
+폼 배열을 써서 주문자 이름을 입력하는 필드에 접근하려면 id, class, name 속성 모두 없다고 가정한다.**나중에 확인 해보기**
+
+**문서 안에 있는 form태그는 모두 forms라는 프로퍼티에 저장되어 있다.**
+```
+document.forms
+```
+**폼 안에 있는 요소들이 elements 속성에 역시 배열 형태로 저장된다.**
+```
+document.forms[0].elements
+```
+
+### 선택 목록과 항목에 접근하기
+```
+<select name="major" id="major">
+  <option>---- 학과 선택 ----</option>
+  <option value="archi">건축공학과</option>
+  <option value="mechanic">기계공학과</option>
+  <option value="indust">산업공학과</option>
+  <option value="elec">전기전자공학과</option>
+  <option value="computer">컴퓨터공학과</option>
+  <option value="chemical">화학공학과</option>
+</select>
+```
+**선택 목록에 접근하기**
+```
+document.querySelector("#major")
+```
+**선택 목록에 있는 항목에 접근하기**
+```
+document.querySeclector("#major").options
+```
+#### selectedIndex
+**selectedIndex 값**은 선택 목록에서 선택한 항목의 인덱스 값을 나타낸다.
+```
+//selectedIndex 값 확인방법
+document.querySelector("#major").options.selectedIndex
+document.querySelector("#major").selectedIndex
+```
+#### selectedIndex 값(선택한 황목) 화면에 표시하기
+```
+const selectMenu =document.querySelector("#major");
+
+function displaySelect() {
+  let selectedText = selectMenu.options[selectMenu.selectedIndex].innerText;
+  alert(`[${selectedText}]를 선택했다.`);
+}
+selectMenu.onchange = displaySelect;
 
 
 
