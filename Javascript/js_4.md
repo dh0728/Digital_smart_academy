@@ -128,21 +128,160 @@ x : 10, y : 20, sum : NaN
 
 ## 4.3 함수 표현식
 
+### 익명 함수
+**익명 함수**이름이 없는 함수를 말한다. 익명함수는 함수 자체가 **식(expression)이므로 함수를 변수에 할당할 수 있고 다른 함수의 매개변수로 사용할 수 있다.
+```
+//익명 함수 실행
+var sum =function (a, b) {
+  return a+b;
+}
+document.write("함수 실행 결과:" + sum(10,20) );
+```
 
+### 즉시 실행 함수
+한번만 사용하는 함수라면 선언과 동시에 실행할 수 있다. **즉시 실행 함수**는 함수가 실행하는 순간에 자바스크립트 해석기에서 함수를 해석한다.
+```
+//기본형1
+(function(){
+  명령
+}());
 
+//기본형2
+(function(매게변수){
+  명령
+}(인수);
+```
+### 화살표 함수
+**화살표 함수(에로우 함수)** 는 ES6버전 부터는 =>를 사용해 함수를 좀더 간단하게 선언한다. 화살 표 함수는 익명함수에서만 사용할 수 있다.
+```
+// 기본형
+(매개변수) => {함수 내용}
+```
+#### 매개변수가 없는 경우
+```
+//익명 함수
+const hi = function() {
+  return "안녕하세요?";
+}
+//화살표 함수로 표현
+const hi = () => { return "안녕하세요?"};
+const hi = () => return "안녕하세요?"; //한줄이면 중괄호 생략 가능
+```
+#### 매개변수 있는 경우
+```
+// 매개변수 1개인 익명함수
+let hi = function(user) {
+  document.write(user + "님, 안녕하세요");
+}
 
+// 매개변수 1개인 화살표 함수로 변환
+let hi = user => {
+  document.write(user + "님, 안녕하세요");
+}
 
+// 매개변수 2개인 익명함수
+let sum = function(a, b) {
+  return a+b;
+{
 
+// 매개변수 2개인 화살표 함수로 변환
+let sum = (a,b) => { a+b; }
+```
 
+### 콜백 함수  
+콜백 함수는 다른 함수의 인자로 사용하는 함수이다. 
+```
+const bttn = document.querSelector("botton") //버튼 요소 가져오기
 
+function display() {
+  alert("클릭했습니다")
+}
+bttn.addEventListener("click",display); //버튼클릭시 display 함수 실행
+```
+#### 함수 안에 직접 콜백 함수 작성해 실행하기 
+함수 안에서 한번만 실행한다면 함수 안에서 콜백 함수를 작성할 수 있다. 
+```
+const bttn= document.querySelector("button");
 
+bttn.addEventListener("click",() => {
+  alert("클랙했습니다.");
+})
+```
 
+## 4.4 전걔 구문
+값만 꺼내서 펼쳐주는 구분으로 마침펴 3개(...)를 사용해서 표현한다. 문자열이나 배열, 객체처럼 여러 값을 담고 있는 값만 꺼내 사용하려고 할 때 유용하다
+```
+fruits = ["apple", "banana", "grape"] 
+console.log(...fruits) 
 
+/// 결과(console창)
+apple banana grape
+```
+### 나머지 매개변수
+마침표 3개를 사용하는 전개 구문은 함수를 선언할 때도 사용한다. 함수를 선언하거나 나중에 몇 개의 인수를 받게 될지 알 수 없을 경우에, 매개변수 자리에 마침표 3개를 사용한다. 
+```
+function addNum(...number) {   
+  let sum=0;
 
+  for(let number of numbers)
+    sum += number;
 
+  return sum;
+}
+```
+일부만 변수로 받고 나머지를 한꺼번에 묶어서 받는 것도 가능하다.
 
+## 4.5 타이머 함수
+**타이머 함수란** 특정 시간이 되었을 떄 함수를 실행하거나 특정 시간 동안 함수를 반복하기 위해서 시간을 재는 함수이다.  <br>
+타이머 함수는 실행할 함수와 시간이 필요하다.-타이머 함수에서 실행할 함수를 인수로 받는다(콜백함수)
 
+### setlnterval()-일정 시간마다 반복하기
+```
+//기본형
+setInterval(콜백함수, 시간)
 
+function greeting() {
+  console.log("안녕하세요?")
+}
+setInterval(greeting,2000);
+
+//화살표 함수로 표현
+setlnterval( () => {console.log("안녕하세요?")},2000);
+```
+
+### clearInterval()-반복 실행 멈추기
+setlnterval()함수는 한 번 실행하면 웹 브라우저를 종료하기 전까지 계속실행한다. 특정 조건이 되었을 경우 반복 실행을 멈추려면 clearInterval()을 사용한다.
+```
+//기본형
+clearInterval(타이머)
+```
+setInterval()을 사용해서 반복 중인 함수를 **'타이머'** 라고 부른다. 반복 중인 함수를 변수에 저장하는 것을 **타이머 변수**라고 한다.
+```
+let timer = setInterval( () => {console.log("안녕")}, 2000);
+```
+#### clearInterval()예시
+```
+
+let counter=0;
+
+let timer =setInterval( () => {    //타이머 시작
+  console.log("안녕")
+  counter++;                       //인사말 표시 1씩 증가
+  if (counter ===5)
+    clearInterval(timer)           //counter=5면 타이머 종
+}, 2000);
+```
+### setTimeout()- 특정 시간후에 실행
+지정한 시간이 흐른 후에 괄호 안에 있는 함수(콜백함수) 실행
+```
+//예시
+setTimeout(콜백 함수,시간)
+
+//예시
+setTimeout(() => { 
+  console.log("안녕하세요?") 
+}, 3000);
+```
 
 
 
