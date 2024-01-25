@@ -167,6 +167,77 @@ title.onclick = () => {
 요소.classList.toggle(클래스명)
 ```
 
+```
+//toggle() 사용x
+const title = document.querySelector("#title");
+
+title.onclick = () => {
+  if(!title.classList.contains("clicked")){
+    title.classList.add("clicked");
+  } else {
+    title.classList.remove("clicked");
+  }
+}
+
+//toggle() 사용o
+const title = document.quenySelector("#title")
+
+title.onclick = () => {
+  title.classList.toggle("clicked");
+}
+```
+
+## 5.4 DOM에서 폼 다루기
+
+### 문서에 접근하기
+**id**를 사용해 접근
+```
+document.querySelector("#order-name")
+```
+**텍스트 필드에 입력한 내용 가져오기**
+```
+document.querySelector("#order-name").value
+```
+
+```
+//html 
+<fieldset>
+  <legend>주문 정보</legend>
+  <ul>
+    <li>
+      <label class="field" for="order-name">이름 : </label>
+      <input type="text" class="input-box" id="order-name" name="order-name">
+    </li>
+    ……
+  </ul>
+</fieldset>
+```
+
+**name 속성 값을 사용해 접근하기**
+만약 name 속성이 있다면 name속성으로도 폼요소에 접근할 수 있다. <br>
+form 태그에도 name속성이 있어야 하고, form 태그 안의 폼 요소에도 name 속성이 있어야한다.
+```
+document.order.product.value //order: form의 name값, product: 상품 필드의 name값
+```
+
+```
+//html
+<form name="order">
+  <fieldset>
+  <legend>상품 정보</legend>
+    <ul>
+      <li>
+        <label class="field" for="product">상품 : </label>
+        <input type="text" class="input-box" id="product" name="product">
+    </li>
+    ……
+  </ul>
+</fieldset>
+……
+```
+
+###
+
 
 
 
