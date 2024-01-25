@@ -68,7 +68,7 @@ id, class, 태그 이름을 사용해서 접근하는 것은 같지만 querySele
 요소.text.Content = "내용"
 ```
 
-#### 클릭으로 텍스트 내용 또는 이미지 바꾸는 예시
+#### 클릭으로 텍스트 내용 바꾸는 예시
 ```
 // html
 <h1 id="title">My Profile</h1>
@@ -93,6 +93,39 @@ const title =document.querySelector("#title")
 
 title.onclick= () => title.innerText="프로필";
 ```
+
+## 5.3 자바스크립트로 스타일 수정하기
+
+### CSS 속성에 접근하기
+자바스크립트를 이용하면 스타일 속성의 값을 가져오거나 원하는 값으로 수정할 수있다.
+```
+요소.style.속성명
+```
+#### 제목 클릭시 글자색과 배경색 변경 예시
+```
+const title = document.querySelector("#title")
+title.onclick = () => {
+  title.style.backgroundColor="yellow";
+  title.style.color="blue";
+}
+```
+### classList 프로퍼티
+두 개 이상의 class 스타일이 적용되었을 경우 class 스타일 정보를 담아두는 프로퍼티이다. classList를 사용해서 적용 중인 class 스타일을 제거할 수도 있고 새로운  스타일을 추가할 수 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
