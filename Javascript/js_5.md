@@ -14,3 +14,57 @@
 **루트 노드(root node) :** DOM 트리의 시작 부분(html)
 
 <img src="./image/domtree.png">
+
+## 5.2 웹 요소에 접근하기
+
+
+### 웹 요소에 접근하기
+웹 문서에서 원하는 요소를 찾아가는 것을 **"접근한다(access)"** 라고 한다.
+
+#### querySelector(), querSelectorAll()함수 
+**선택자 :** id 이름 앞에는 해시 기호(#), class 이름 앞에는 마침표(.), 태그는 기호 없이 태그명을 사용
+**반환값 :** querySelector() 메서드는 한 개의 값만 반환하고 querySelectorAll() 메서드는 반환 값이 여러 개일 때 모두 반환한다. **노드 리스트로 저장됨**
+
+```
+querySelector(선택자)
+
+querySelectorAll(선택자)
+```
+### getElement~ 함수
+예전부터 사용하던 방법으로 id, class, 태그명을 사용해 접근한다.
+
+#### getElementByld()
+```
+document.getElementByld("id명")
+```
+
+#### getElementsByClassName()
+```
+document.getElementsByClassName("클래스명")
+```
+
+#### getElementsByTagName()
+```
+document.getElementsTagName("태그명")
+```
+
+#### getElement와 querySelector()의 차이점
+id, class, 태그 이름을 사용해서 접근하는 것은 같지만 querySelector()을 사용하면 둘 이상의 선택자를 조합해서 접근할 수 있다.
+
+### 웹 요소 내용 가져오기 및 수정하기
+접귾나 요소의 텍스트 내용을 가져오거나 지정할 때는 innerText, innerHTMl, textContent 프로퍼티 사용한다.
+
+**innerText :** 순수 텍스트를 가져오거나, 해당 요소에 텍스트 지정 <br>
+**innerHTML :** 태그와 함께 텍스트를 가져오거나, 해당 요소에 태그와 함께 텍스트 지정<br>
+**textContent :** 텍스트를 가져오되, 화면에 보이는대로가 아니라 소스에 있는대로 가져온다.
+
+
+
+
+
+
+
+
+
+
+
