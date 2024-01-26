@@ -287,6 +287,62 @@ function displaySelect() {
 selectMenu.onchange = displaySelect;
 
 
+//화살표 함수
+
+const selcetMenu = document.querySelector("major")
+
+selectMenu.onchange = () => {
+  let selectedText = selectMenu.options[selectMenu.selectedIndex].innerText;
+  alert('[${selectedText}]를 선택했다.');
+}
+```
+
+### 라디오 버튼과 체크 박스에 접근하기
+1.라디오 버튼이나 체크 박스는 name을 사용해 버튼을 그룹으로 묶는다.(라디오 버튼이나 체크 박스는 하나의 그룹 안에서 항목을 선택하기 때문) <br>
+2.라디오 버튼과 체크박스는 name 값을 사용해 접근한다. <br>
+3.같은 name을 가진 항목이 많기 때문에 RadioNodeList라는 노드 리스트 형태로 저장된다.(배열과 비슷한 형태)<br>
+4.어떤 항목을 선택했는지 알려면 checked 속성이 있는지 체크한다.(checked 속성은 HTML에서 라디오 버튼과 체크 박스에서 사용할 수 있는 속성)
+
+#### 라디오 버튼에 접근하기
+```
+// HTML
+<fieldset>
+  <legend>신청 과목</legend>
+  <p>이 달에 신청할 과목을 선택하세요.</p>
+  <label><input type="radio" name="subject" value="speaking">회화</label>
+  <label><input type="radio" name="subject" value="grammar">문법</label>
+  <label><input type="radio" name="subject" value="writing">작문</label> 
+</fieldset>
+
+//radio
+
+const radioMenu= document.testForm.subject
+console.log(radioMenu[0].value)
+
+const radioMenu1 =document.querySelector("input[name='subject']:checked")
+console.log(radioMenu1)
+
+//mailing (체크박스 2개 이상 선택 가능하므로 querySelectorAll() 사용)
+
+const checkMenu=document.testForm.mailing
+console.log(checkMenu[0].value)
+
+const checkMenu1 =document.querySelectorAll("input[name='mailing']:checked")
+console.log(checkMenu1)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
