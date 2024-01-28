@@ -321,7 +321,7 @@ close.addEventListerner("click", () =>
     </tr>
     <tr>
       <td>shiftKey</td>
-      <td>이벤트가 발생했을 때 shift를 누르고 있었는지 여부를 확인하고 Boolean 값응ㄹ 반환한다.</td>
+      <td>이벤트가 발생했을 때 shift를 누르고 있었는지 여부를 확인하고 Boolean 값 반환한다.</td>
     </tr>
     <tr>
       <td>target</td>
@@ -340,6 +340,19 @@ close.addEventListerner("click", () =>
       <td>키보드와 관련된 이벤트가 발생했을 때 키의 유니코드 값을 반환한다.</td>
     </tr>
   </table>
+
+#### 예시-마우스 클릭위치 알아내기
+```
+//html
+<p>사각형 내부를 클릭해 보세요</p>
+<div id="box></div>
+
+//js
+const box=document.querySelector("#box")
+
+box.addEventListener("click", (e) => {
+  alert(`이벤트 발생 위치 : ${e.pageX},${e.pageY}`);
+});
 
 
 
