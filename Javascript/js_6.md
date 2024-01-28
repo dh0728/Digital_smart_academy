@@ -368,12 +368,88 @@ body.addEventListener("keydown",(e) => {
 ```
 
 ### 캐러셀 만들기
+**캐러셀(carousel) :** 이미지나 콘텐츠를 슬라이드 쇼처럼 보여주는 요소
+
+```
+//html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/test.css">
+  <title>캐러셀 연습</title>
+</head>
+<body>
+  <p>좌우 화살표를 눌러봐라</p>
+  
+  <diV id="container">
+      <div class="arrow" id="left">&lang;</div>
+      <div class="arrow" id="right">&rang;</div>
+  </diV>
+
+  <script src="./js/test.js"></script>
+</body>
+</html>
+```
+```
+//css
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+p{
+  margin:20px;
+  font-size:2em;
+}
+#container{
+  position:relative;
+  width:600px;
+  height:300px;
+  border:2px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+```
+```
+// js
+const container= document.querySelector("#container");
+
+const pics= ["pic-1.jpg", "pic-2.jpg","pic-3.jpg","pic-4.jpg","pic-5.jpg",]
+
+container.style.backgroundImage=`url(images/${pics[0]})`;
 
 
+const arrows =document.querySelectorAll(".arrow");
+let i=0;
 
-
-
-
+arrows.forEach(arrow => {
+  arrow.addEventListener("click",(e) => {
+    if(e.target.id === "left") {
+      i--
+      if(i<0){
+        i= pics.length -1;
+      }
+    }
+    else if(e.target.id === "right") {
+      i++;
+      if(i>=pics.length){
+        i=0;
+      }
+    }
+    container.style.backgroundImage=`url(images/${pics[i]})`;
+  });
+});
+```
 
 
 
