@@ -353,7 +353,21 @@ const box=document.querySelector("#box")
 box.addEventListener("click", (e) => {
   alert(`이벤트 발생 위치 : ${e.pageX},${e.pageY}`);
 });
+```
 
+#### 예시2-키보드 키를 눌렀을 때 키값 알아내기
+```
+const  body = document.body;
+const result = document.querySelector("#result");
+
+body.addEventListener("keydown",(e) => {
+  result.innerText =`
+    code : ${e.code},
+    key : ${e.key}`;
+});
+```
+
+### 캐러셀 만들기
 
 
 
