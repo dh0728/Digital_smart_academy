@@ -200,13 +200,146 @@ button.addEventListener("click",() => {
 모달 박스에 표시되는 내용은 웹 문서 안에 미리 만들어져 있어야 한다. <br>
 css와 자바스크립트를 사용해서, 처음에는 모달 박스 부분을 화면에 감춰 두었다가 버튼을 클릭하거나 특정 이벤트가 발생했을 때 모달 박스를 표시한다.
 
-.
+```
+//HTML 
+<body>
+  <button id="open">프로필 보기</button>
 
+  <div id="modal-box">
+    <div id="modal-contents">
+      <button id="close">&times;</button>
+      <h1 id="title">My Profile</h1>
+      <div id="profile">
+        <img src="images/pf.png" alt="도레미">
+        <div id="desc">
+          <p class="user">이름 : 도레미</p>
+          <p class="user">주소 : somewhere</p>
+          <p class="user">연락처 : 1234-5678</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script src="js/modal-result.js"></script>
+</body>
+```
 
+```
+//css 파이
+button { …… }
+#modal-box{
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 
+#modal-box.active {
+  display: flex;
+}
+```
 
+```
+//js파
+const open = document.querySelector("#open")
+const modalBox = document.querySelector("#modal-box")
+const close = document.querySelector("#close")
 
+open.addEventListener("click", () => {
+  modalBox.classList.add("active");
+});
+close.addEventListerner("click", () =>
+  modalBox.classList.remove("active")
+})
+```
+
+## 6.3 event 객체
+이벤트가 발생하면 자동으로 만들어지는 객체<br>
+
+### event 객체의 메서드
+<table>
+    <tr>
+      <th>메서드</th>
+      <th>기능</th>
+    </tr>
+    <tr>
+      <td>preventDefault</td>
+      <td>(취소할 수 있는 경우) 기본 동작을 취소한다.</td>
+    </tr>
+  </table>
+
+### event 객체의 프로퍼티
+  <table>
+    <tr>
+      <th>프로퍼티</th>
+      <th>기능</th>
+    </tr>
+    <tr>
+      <td>altKey</td>
+      <td>이벤트가 발생했을 때 alt를 누르고 있었는지 여부를 확인하고 Boolean값을 반환한다.</td>
+    </tr>
+    <tr>
+      <td>botton</td>
+      <td>마우스 키를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>charCode</td>
+      <td>keypress 이벤트가 발생했을 때 어떤 키가 눌렸는지 유니코드 값으로 반환한다.</td>
+    </tr>
+    <tr>
+      <td>clientX</td>
+      <td>이벤트가 발생한 가로 위치를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>clientY</td>
+      <td>이벤트가 발생한 세로 위치를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>ctrlKey</td>
+      <td>이벤트가 발생했을 때 ctrl을 누르고 있었는지의 여부를 확인하고 boolean 값을 반환한다.</td>
+    </tr>
+    <tr>
+      <td>pageX</td>
+      <td>현재 문서를 기준으로 이벤트가 발생한 가로 위치를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>pageY</td>
+      <td>현재 문서를 기준으로 이벤트가 발생한 세로 위치를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>screenX</td>
+      <td>현재 화면를 기준으로 이벤트가 발생한 가로 위치를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>screenY</td>
+      <td>현재 화면를 기준으로 이벤트가 발생한 세로 위치를 반환한다.</td>
+    </tr>
+    <tr>
+      <td>shiftKey</td>
+      <td>이벤트가 발생했을 때 shift를 누르고 있었는지 여부를 확인하고 Boolean 값응ㄹ 반환한다.</td>
+    </tr>
+    <tr>
+      <td>target</td>
+      <td>이벤트가 발생한 대상을 반환한다.</td>
+    </tr>
+    <tr>
+      <td>timeStamp</td>
+      <td>이벤트가 발생한 시간을 밀리초 단위로 반환한다.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>발생한 이벤트 이름을 반환한다.</td>
+    </tr>
+    <tr>
+      <td>which</td>
+      <td>키보드와 관련된 이벤트가 발생했을 때 키의 유니코드 값을 반환한다.</td>
+    </tr>
+  </table>
 
 
 
